@@ -1,0 +1,40 @@
+import React from "react";
+import "./Header.css";
+import { Switch, Route } from "react-router-dom";
+import { LoginRoute } from "../login/Login";
+import { useHistory } from "react-router-dom";
+
+export default function Header({ views, children, appContext }) {
+  let history = useHistory();
+  return (
+    <header>
+      <div className="appicon headerappicon" />
+      <Switch>
+        {views.map((element, index) => {
+          return (
+            <Route
+              key={index}
+              exact={element.exact === "true"}
+              path={element.path}
+            >
+              <h1>{element.title}</h1>
+            </Route>
+          );
+        })}
+      </Switch>
+      {children}
+      {appContext.user ? (
+        <div
+          className="user icon"
+          onClick={() => {
+            history.push(LoginRoute.path);
+          }}
+        >
+          {"\uf007"}
+        </div>
+      ) : (
+        <div />
+      )}
+    </header>
+  );
+}

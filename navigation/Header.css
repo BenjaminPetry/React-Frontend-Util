@@ -1,0 +1,59 @@
+/* https://loading.io/css/ */
+
+header {
+  grid-area: header;
+  align-self: baseline;
+  justify-self: stretch;
+  width: 100%;
+  overflow: hidden;
+  height: 40px;
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: var(--icon-xxl) 1fr min-content var(--icon-xxl);
+  grid-template-areas: "appicon apptitle header-addon user";
+  /* position: fixed; */
+  z-index: 0;
+  top: 0;
+
+  -webkit-box-shadow: 0px 2px 4px 0px var(--shadow-black);
+  -moz-box-shadow: 0px 2px 4px 0px var(--shadow-black);
+  box-shadow: 0px 2px 4px 0px var(--shadow-black);
+}
+
+.headerappicon {
+  width: var(--icon-xxl);
+  height: var(--icon-xxl);
+  grid-area: appicon;
+  display: block;
+}
+
+header h1 {
+  grid-area: apptitle;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  align-self: center;
+  font-size: 1.375em;
+  line-height: 1.13636364em;
+}
+
+@media (min-width: 37.5em) {
+  header {
+    position: initial;
+    top: auto;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  header h1 {
+    margin-left: var(--spacing-md);
+    text-align: left;
+    line-height: 1.25em;
+  }
+}
+
+.user {
+  grid-area: user;
+  padding: var(--spacing-xs);
+}

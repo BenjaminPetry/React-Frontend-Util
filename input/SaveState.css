@@ -1,0 +1,38 @@
+.saveState {
+  font-family: "Font Awesome 5 Free";
+  margin-left: var(--spacing-xl);
+  font-size: var(--icon-md);
+}
+
+button i.fas.saveState {
+  font-size: var(--icon-md);
+  margin-right: 0px;
+}
+
+.saveState.saving {
+  color: var(--status-neutral);
+}
+.saveState.saving::before {
+  content: "\f110";
+}
+
+.saveState.savingSuccess {
+  color: var(--status-ok);
+}
+.saveState.savingSuccess::before {
+  content: "\f058";
+}
+
+.saveState.savingFailed {
+  color: var(--status-caution);
+}
+.saveState.savingFailed::before {
+  content: "\f057";
+}
+
+.saveState.notSaved {
+  color: var(--status-warning);
+}
+.saveState.notSaved::before {
+  content: "\f0c7";
+}

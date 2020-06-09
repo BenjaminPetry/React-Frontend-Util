@@ -1,0 +1,629 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600");
+@import url("https://use.fontawesome.com/releases/v5.4.1/css/all.css");
+
+:root {
+  /* ###########################################################
+   ########################## COLORS #########################
+   ########################################################### */
+
+  /* Primary */
+  --green-25: #004037;
+  --green-42: #006c5d; /* Main Color */
+  --green-75: #00bfa5;
+  --green-100: #00ffdc;
+
+  /* Secondary */
+  --accent-25: #401300;
+  --accent-42: #6b2000;
+  --accent-75: #bf3900;
+  --accent-100: #ff4c00;
+
+  /* Greys */
+  --white: #ffffff;
+  --grey-95: #f3f4f5;
+  --grey-90: #e6e7e8;
+  --grey-80: #ccced0;
+  --grey-60: #999c9f;
+  --grey-50: #808386;
+  --grey-40: #66696c;
+  --grey-30: #4d5053;
+  --grey-20: #333539;
+  --black: #000000;
+
+  /* Status */
+  --status-caution: #e63a2e;
+  --status-warning: #f2cc30;
+  --status-ok: #21a637;
+  --status-neutral: #a8aaad;
+
+  /* Signal */
+  --signal-danger: #cc0e00;
+  --signal-warning: #e6b900;
+  --signal-information: #0061bf;
+  --signal-confirmation: #008c17;
+
+  /* Shadows */
+  --shadow-black: #1515154f;
+
+  /* ###########################################################
+   ##################### SPACING & SIZES #####################
+   ########################################################### */
+
+  --spacing-xxl: 40px;
+  --spacing-xl: 32px;
+  --spacing-lg: 24px;
+  --spacing-md: 16px;
+  --spacing-smd: 12px;
+  --spacing-sm: 8px;
+  --spacing-xs: 4px;
+  --spacing-xxs: 2px;
+
+  --icon-xxl: 40px;
+  --icon-xl: 32px;
+  --icon-lg: 24px;
+  --icon-md: 16px;
+  --icon-sm: 8px;
+
+  --font-xxl: 40px;
+  --font-xl: 32px;
+  --font-lg: 24px;
+  --font-md: 16px;
+  --font-sm: 12px;
+  --font-xs: 8px;
+
+  --font-bold: 600;
+  --font-normal: 300;
+
+  --break-phone: 37.5em; /* 600px */
+  --break-tablet: 64em; /* 1024px */
+
+  --content-max-width: 960px;
+  /*--lg: */
+}
+
+/* ###########################################################
+   ###################### ELEMENT COLORS #####################
+   ########################################################### */
+
+* {
+  color: var(--black);
+}
+
+html,
+body {
+  background-color: var(--grey-90);
+  overflow: hidden;
+}
+
+body {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.inverse {
+  color: var(--white);
+}
+
+a,
+.link {
+  color: var(--accent-75);
+}
+a:hover:enabled,
+.link:hover:enabled {
+  color: var(--accent-100);
+}
+a:active:enabled,
+.link:active:enabled {
+  color: var(--accent-42);
+}
+
+caption,
+.caption {
+  color: var(--grey-60);
+}
+
+.invalid {
+  color: var(--signal-danger);
+  font-weight: var(--font-bold);
+}
+
+/* ###########################################################
+   ######################## TEXT SIZES #######################
+   ########################################################### */
+* {
+  font-family: "Source Sans Pro";
+  font-size: 100%;
+  text-align: left;
+  line-height: 1.25em;
+  font-weight: var(--font-normal);
+  font-style: normal;
+}
+
+body,
+caption,
+th,
+td,
+input,
+textarea,
+select,
+option,
+legend,
+fieldset,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size-adjust: 0.5;
+}
+
+label,
+.label {
+  font-weight: var(--font-bold);
+}
+
+.title {
+  font-weight: var(--font-bold);
+  text-align: center;
+}
+
+.invalid caption,
+caption.invalid {
+  font-weight: var(--font-bold);
+}
+
+.title-light {
+  text-align: center;
+}
+
+/* MOBILE PHONE */
+
+h1 {
+  font-size: 2em;
+  line-height: 1.25em;
+}
+
+h2 {
+  font-size: 1.625em;
+  line-height: 1.15384615em;
+}
+
+h3 {
+  font-size: 1.375em;
+  line-height: 1.13636364em;
+}
+
+h4 {
+  font-weight: var(--font-bold);
+  font-size: 1.125em;
+  line-height: 1.22222em;
+}
+
+h5 {
+  font-size: 1.125em;
+  line-height: 1.22222em;
+}
+
+p {
+  max-width: 17em; /* approx 35 - 40 characters */
+}
+
+caption,
+.caption {
+  font-size: 0.8em;
+  line-height: 1.618em;
+}
+
+/* TABLET */
+@media (min-width: 37.5em) {
+  * {
+    font-size: 1em;
+    line-height: 1.375em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    line-height: 1.125em;
+  }
+
+  h2 {
+    font-size: 2em;
+    line-height: 1.25em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+
+  p {
+    max-width: 28em; /* approx 60-75 characters */
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 60em) {
+  * {
+    font-size: 1em;
+    line-height: 1.375em;
+  }
+
+  h1 {
+    font-size: 3em;
+    line-height: 1.05em;
+  }
+
+  h2 {
+    font-size: 2.25em;
+    line-height: 1.25em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+
+  p {
+    max-width: 28em; /* approx 60-75 characters */
+  }
+}
+
+/* ###########################################################
+   ##################### ELEMENT SPACINGS ####################
+   ########################################################### */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: content-box;
+}
+
+html,
+body,
+div#root,
+div#root > div {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+h1 {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+h2 {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-smd);
+}
+
+h3 {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-smd);
+}
+
+h4,
+h5 {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* TABLET */
+@media (min-width: 37.5em) {
+  h1 {
+    margin-top: var(--spacing-xxl);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  h2 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-smd);
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 60em) {
+  h1 {
+    margin-top: var(--spacing-xxl);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  h2 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-smd);
+  }
+}
+
+/* ###########################################################
+   ########################## ICONS ##########################
+   ########################################################### */
+
+.appicon,
+.appicon.lg,
+.appicon.md {
+  background-image: url("/favicon.ico");
+  background-size: var(--icon-lg) var(--icon-lg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: var(--icon-lg);
+  height: var(--icon-lg);
+}
+
+.appicon.md {
+  background-size: var(--icon-md) var(--icon-md);
+  width: var(--icon-md);
+  height: var(--icon-md);
+}
+
+/* ###########################################################
+   ######################## DISABLED #########################
+   ########################################################### */
+
+.disabled,
+button:disabled,
+input:disabled {
+  opacity: 0.3;
+}
+
+button.danger {
+  color: var(--white);
+  background-color: var(--signal-danger);
+  font-weight: var(--font-bold);
+}
+button.danger:hover:enabled {
+  background-color: var(--status-caution);
+}
+
+button.danger:active:enabled {
+  background-color: var(--black);
+}
+
+/* ###########################################################
+   ########################## INPUT ##########################
+   ########################################################### */
+
+div.input {
+  text-align: left;
+}
+
+label,
+.label {
+  margin: var(--spacing-sm);
+  margin-bottom: calc(0px - var(--spacing-xs) / 2);
+  text-align: left;
+}
+
+/* TODO --> Move into the right files */
+
+/* ###########################################################
+   ######################### BUTTON ##########################
+   ########################################################### */
+
+button {
+  margin: var(--spacing-sm);
+  height: calc(var(--spacing-xxl) - var(--spacing-sm) * 2);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: 4px;
+  border-width: 0px;
+  border-style: none;
+  outline: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  background-color: var(--grey-80);
+  color: var(--black);
+  text-align: center;
+}
+
+button:hover:enabled {
+  background-color: var(--grey-90);
+}
+button:active:enabled {
+  background-color: var(--grey-60);
+}
+
+.primary {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+button.primary:hover:enabled {
+  background-color: var(--grey-40);
+}
+button.primary:active:enabled {
+  background-color: var(--grey-20);
+}
+
+/* ###########################################################
+   ####################### ICON BUTTON #######################
+   ########################################################### */
+
+button i.fas {
+  margin-right: var(--spacing-sm);
+  font-size: var(--icon-lg);
+}
+
+.icon,
+.icon-solid,
+.icon-regular {
+  font-family: "Font Awesome 5 Free";
+  font-size: var(--icon-lg);
+}
+.icon.small {
+  font-size: var(--icon-md);
+}
+.icon-regular {
+  font-weight: 200;
+}
+.icon,
+.icon-solid {
+  font-weight: 900;
+}
+
+.iconbutton {
+  font-family: "Font Awesome 5 Free";
+  font-size: var(--icon-lg);
+  padding: var(--spacing-sm);
+  height: calc(var(--icon-xxl) - var(--spacing-sm) * 2);
+  width: calc(var(--icon-xxl) - var(--spacing-sm) * 2);
+  display: grid;
+}
+.iconbutton i.fas {
+  font-family: "Font Awesome 5 Free";
+  margin: 0px;
+  font-size: var(--icon-lg);
+}
+
+.iconbutton.primary i.fas,
+button.primary i.fas {
+  color: var(--white);
+}
+
+/* .secondary.iconbutton {
+  color: var(--grey-500);
+  background-color: var(--black);
+  padding: 0px;
+  height: var(--icon-md);
+  width: var(--icon-md);
+}
+
+.secondary.iconbutton i {
+  margin: 0px;
+  margin-left: -2px;
+  margin-top: -2px;
+  font-size: calc(var(--font-md) + 6px);
+}
+
+.secondary.iconbutton:hover:enabled {
+  color: var(--grey-400);
+  background-color: var(--black);
+}
+
+.secondary.iconbutton:active:enabled {
+  color: var(--grey-300);
+  background-color: var(--black);
+} */
+
+/* ###########################################################
+   ########################### BAR ###########################
+   ########################################################### */
+
+.bar {
+  margin-left: var(--spacing-md);
+  margin-right: var(--spacing-md);
+  height: 1px;
+  background-color: var(--grey-80);
+  width: 100%;
+}
+
+.toolbar {
+  display: grid;
+  border-top: 1px solid var(--grey-80);
+  -webkit-box-shadow: 0px -1px 2px var(--grey-80);
+  -moz-box-shadow: 0px -1px 2px var(--grey-80);
+  box-shadow: 0px -1px 2px var(--grey-80);
+  z-index: 1000;
+}
+
+.toolbar > * {
+}
+
+/* ###########################################################
+   ####################### GRID LAYOUT #######################
+   ########################################################### */
+
+/* For mobile phones:
+[class*="col-"] {
+  width: 100%;
+} 
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: 
+  .col-s-1 {
+    width: 8.33%;
+  }
+  .col-s-2 {
+    width: 16.66%;
+  }
+  .col-s-3 {
+    width: 25%;
+  }
+  .col-s-4 {
+    width: 33.33%;
+  }
+  .col-s-5 {
+    width: 41.66%;
+  }
+  .col-s-6 {
+    width: 50%;
+  }
+  .col-s-7 {
+    width: 58.33%;
+  }
+  .col-s-8 {
+    width: 66.66%;
+  }
+  .col-s-9 {
+    width: 75%;
+  }
+  .col-s-10 {
+    width: 83.33%;
+  }
+  .col-s-11 {
+    width: 91.66%;
+  }
+  .col-s-12 {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: 
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+} */

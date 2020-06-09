@@ -1,0 +1,97 @@
+/* ###########################################################
+   ######################### SLIDER ##########################
+   ########################################################### */
+
+/* The slider itself */
+input[type="range"] {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  height: var(--spacing-xxs);
+  background-color: var(--grey-60);
+  border: 0px solid var(--white);
+  border-radius: calc(var(--spacing-xxs) / 2);
+  outline: none;
+  padding: 0px;
+  margin-top: calc(
+    (var(--spacing-xl) - var(--spacing-xxs)) / 2 + var(--spacing-sm)
+  );
+  margin-bottom: calc(
+    (var(--spacing-xl) - var(--spacing-xxs)) / 2 + var(--spacing-sm)
+  );
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: background-color 0.2s;
+}
+
+input[type="range"]:hover {
+  background-color: var(--grey-80);
+}
+
+input[type="range"]:active:enabled {
+  background-color: var(--grey-40);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: var(--spacing-lg); /* Set a specific slider handle width */
+  height: var(--spacing-lg); /* Slider handle height */
+  -webkit-appearance: none; /* Override default look */
+  appearance: initial;
+  border-radius: calc(var(--spacing-lg) / 2);
+  border-width: 0px;
+  border-style: none;
+  outline: none;
+  background-color: var(--grey-80);
+  color: var(--black);
+  cursor: pointer; /* Cursor on hover */
+  -webkit-box-shadow: 1px 1px 4px 0px var(--grey-80);
+  -moz-box-shadow: 1px 1px 4px 0px var(--grey-80);
+  box-shadow: 1px 1px 4px 0px var(--grey-80);
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: background-color 0.2s;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: var(--spacing-lg); /* Set a specific slider handle width */
+  height: var(--spacing-lg); /* Slider handle height */
+  background-color: var(--grey-80);
+  cursor: pointer; /* Cursor on hover */
+}
+
+/* Mouse-over effects */
+input[type="range"]:hover:enabled::-webkit-slider-thumb {
+  background-color: var(--grey-90);
+}
+
+input[type="range"].primary::-webkit-slider-thumb {
+  background-color: var(--black);
+}
+input[type="range"].primary:hover:enabled::-webkit-slider-thumb {
+  background-color: var(--grey-40);
+}
+input[type="range"].primary:active:enabled::-webkit-slider-thumb {
+  background-color: var(--grey-20);
+}
+
+input[type="range"]:hover:enabled::-webkit-slider-thumb {
+  background-color: var(--grey-90);
+}
+
+input[type="range"]:active:enabled::-webkit-slider-thumb {
+  background-color: var(--grey-60);
+}
+
+.SliderContainer {
+  height: var(--spacing-xxl);
+  margin: var(--spacing-sm);
+}
+
+.SliderContainer label {
+  height: var(--spacing-xxl);
+  margin: 0px;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+
+.SliderContainer input {
+  margin: 0px var(--spacing-sm) 0px 0px;
+}

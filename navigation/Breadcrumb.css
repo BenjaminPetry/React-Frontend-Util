@@ -1,0 +1,68 @@
+ul.breadcrumb {
+  width: 100%;
+  height: var(--spacing-xl);
+  background-color: var(--grey-95);
+  border-bottom: 1px solid var(--grey-80);
+  border-top: 1px solid var(--grey-80);
+  vertical-align: middle;
+  display: flex;
+}
+
+ul.breadcrumb li {
+  list-style: none;
+  height: var(--spacing-xl);
+  vertical-align: middle;
+}
+/* 
+ul.breadcrumb li button {
+  box-sizing: content-box;
+  height: var(--spacing-xl);
+  padding: 0px;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+  margin: 0px;
+  display: inline-block;
+  display: flex;
+  border-radius: 0px;
+  /* border-radius: calc(var(--spacing-xl) / 2);
+  margin-right: var(--spacing-md);
+  text-align: left;
+  vertical-align: middle;
+}
+
+ul.breadcrumb li button {
+  transition: color 0.2s ease;
+  color: var(--accent-42);
+  cursor: pointer;
+}
+
+ul.breadcrumb li button::before {
+  content: ">";
+}
+
+ul.breadcrumb li button:hover:enabled {
+  color: var(--accent-75);
+}
+
+ul.breadcrumb li button:active:enabled {
+  color: var(--accent-25);
+}
+
+ul.breadcrumb li button:disabled {
+  color: var(--black);
+  background-color: transparent;
+  cursor: auto;
+  opacity: 1;
+}
+
+.arrowLeft {
+  align-self: flex-end;
+  float: right;
+  height: 0px;
+  width: 0px;
+  background: transparent;
+  border: calc(var(--spacing-xl) / 2) solid var(--grey-20);
+  border-right: 0px solid var(--grey-20);
+  border-color: transparent transparent transparent var(--grey-20);
+  margin-right: calc(0px - var(--spacing-xl) / 2 - var(--spacing-md));
+} */

@@ -1,0 +1,25 @@
+.LoginContainer {
+  height: 100%;
+  padding-top: 0px;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr;
+}
+
+.LoginContainer .tile {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+@media (min-width: 37.5em) {
+  .LoginContainer {
+    max-width: 480px;
+    grid-template-rows: 2fr 1fr;
+  }
+}
+
+.error-bar {
+  margin-left: calc(0px - var(--spacing-md));
+  margin-right: calc(0px - var(--spacing-md));
+  margin-top: calc(0px - var(--spacing-md));
+}

@@ -1,0 +1,6 @@
+.error-bar {
+  margin-left: calc(0px - var(--spacing-md));
+  margin-right: calc(0px - var(--spacing-md));
+  margin-top: calc(0px - var(--spacing-md));
+  margin-bottom: calc(var(--spacing-md));
+}

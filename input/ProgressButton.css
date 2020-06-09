@@ -1,0 +1,128 @@
+.progressButton .arrowRight,
+.progressButton .arrowRightInverse,
+.progressButton button {
+  --button-color: var(--grey-80);
+  --button-color-hover: var(--grey-90);
+  --button-color-active: var(--grey-60);
+  --button-selection: var(--black);
+  --button-background-selection: var(--white);
+  background-color: var(--button-color);
+}
+
+/* Whole Progressbutton */
+.progressButton {
+  display: grid;
+  grid-template-columns: calc(var(--spacing-xl) / 2) auto calc(
+      var(--spacing-xl) / 2
+    );
+  grid-template-areas: "left button right";
+  cursor: pointer;
+}
+
+.progressButton.last {
+  height: calc(var(--spacing-xl));
+}
+
+/* Buttonpart */
+.progressButton button {
+  height: var(--spacing-xl);
+  padding: 0px var(--spacing-md) 0px var(--spacing-md);
+  margin: 0px;
+  border-radius: 0px;
+  transition: background-color 0.2s ease;
+  color: var(--accent-42);
+  cursor: pointer;
+}
+
+.progressButton:hover button {
+  background-color: var(--button-color-hover);
+  color: var(--accent-75);
+}
+.progressButton:active button {
+  background-color: var(--button-color-active);
+  color: var(--accent-25);
+}
+
+.progressButton.last button,
+.progressButton.last:hover button,
+.progressButton.last:active button {
+  background-color: var(--button-background-selection);
+  height: calc(var(--spacing-xl));
+  border-bottom: 1px solid var(--button-background-selection);
+  color: var(--button-selection);
+  cursor: auto;
+  font-weight: 600;
+}
+
+/* Arrows */
+.progressButton .arrowRight,
+.progressButton .arrowRightInverse {
+  height: 0px;
+  width: 0px;
+  background: transparent;
+  border: calc(var(--spacing-xl) / 2) solid var(--button-color);
+  border-right-width: 0px;
+  transition: border-color 0.2s ease;
+}
+
+/* Buttonpart Right Inverse */
+
+.progressButton .arrowRightInverse {
+  grid-area: left;
+  border-color: var(--button-color) transparent var(--button-color) transparent;
+}
+
+.progressButton:hover .arrowRightInverse {
+  border-color: var(--button-color-hover) transparent var(--button-color-hover)
+    transparent;
+}
+.progressButton:active .arrowRightInverse {
+  border-color: var(--button-color-active) transparent
+    var(--button-color-active) transparent;
+}
+
+.progressButton.first .arrowRightInverse {
+  border-left-color: var(--button-color);
+}
+.progressButton.first:hover .arrowRightInverse {
+  border-left-color: var(--button-color-hover);
+}
+.progressButton.first:active .arrowRightInverse {
+  border-left-color: var(--button-color-active);
+}
+
+.progressButton.last .arrowRightInverse,
+.progressButton.last:hover .arrowRightInverse,
+.progressButton.last:active .arrowRightInverse {
+  border-color: var(--button-background-selection) transparent
+    var(--button-background-selection) transparent;
+  height: 1px;
+  cursor: auto;
+}
+.progressButton.last.first .arrowRightInverse,
+.progressButton.last.first:hover .arrowRightInverse,
+.progressButton.last.first:active .arrowRightInverse {
+  border-color: var(--button-background-selection) transparent
+    var(--button-background-selection) var(--button-background-selection);
+}
+
+/* Buttonpart Right */
+
+.progressButton .arrowRight {
+  grid-area: right;
+  border-color: transparent transparent transparent var(--button-color);
+}
+.progressButton:hover .arrowRight {
+  border-color: transparent transparent transparent var(--button-color-hover);
+}
+.progressButton:active .arrowRight {
+  border-color: transparent transparent transparent var(--button-color-active);
+}
+.progressButton.last .arrowRight,
+.progressButton.last:hover .arrowRight,
+.progressButton.last:active .arrowRight {
+  border-color: transparent transparent transparent
+    var(--button-background-selection);
+  height: 1px;
+  cursor: auto;
+}

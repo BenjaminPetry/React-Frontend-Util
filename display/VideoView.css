@@ -1,0 +1,67 @@
+.videoView,
+.videoView div.video-react,
+.videoView video {
+  height: 100%;
+  width: 100%;
+}
+
+.videoPlayer {
+  height: 100%;
+}
+
+.video-react * {
+  color: var(--white);
+}
+
+.video-react button:hover {
+  background: none;
+}
+
+.videoView {
+  height: 100%;
+  width: 100%;
+}
+.videoToolbar.toolbar {
+  grid-template-rows: min-content min-content;
+  grid-template-columns: auto;
+  box-shadow: none;
+}
+
+.video-react .video-react-control.video-react-current-time,
+.video-react .video-react-control.video-react-duration {
+  flex: none;
+  height: 13px;
+  float: left;
+}
+
+.videoControlBar {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.videoControlBar .videoMainControl {
+  align-self: center;
+  justify-self: end;
+  margin: 0px;
+}
+.videoControlBar .SliderContainer {
+  align-self: center;
+  justify-self: start;
+}
+
+.videoDisplayBar {
+  grid-row: 1;
+  padding: var(--spacing-sm);
+  font-size: var(--font-sm);
+  color: var(--grey-40);
+}
+
+.videoMainControl {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.videoDisplayBar {
+  align-content: center;
+  text-align: center;
+}

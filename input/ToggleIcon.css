@@ -1,0 +1,9 @@
+.toggleIcon.unselected {
+  color: var(--status-neutral);
+  cursor: pointer;
+}
+
+.toggleIcon.selected {
+  color: var(--status-ok);
+  cursor: pointer;
+}

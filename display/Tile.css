@@ -1,0 +1,44 @@
+.tile {
+  background-color: var(--white);
+  border-top: 1px solid var(--grey-80);
+  border-bottom: 1px solid var(--grey-80);
+  text-align: left;
+  margin-bottom: var(--spacing-md);
+}
+
+.tile,
+main > .tile,
+main > * > .tile {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@media (min-width: 37.5em) {
+  .tile,
+  main > .tile,
+  main > * > .tile {
+    border: 1px solid var(--grey-80);
+    width: calc(100% - var(--spacing-md) * 2);
+  }
+}
+
+.tile > .header {
+  font-size: var(--font-md);
+  font-weight: var(--font-bold);
+  margin-bottom: calc(0px - var(--spacing-sm));
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm)
+    var(--spacing-md);
+}
+
+.tile.primary > .header {
+  background-color: var(--grey-30);
+  color: var(--white);
+  margin-bottom: 0px;
+}
+
+.tile > .content {
+  padding: var(--spacing-md);
+}

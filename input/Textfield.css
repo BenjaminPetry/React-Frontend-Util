@@ -1,0 +1,114 @@
+input {
+  margin: var(--spacing-sm);
+  height: calc(var(--spacing-xxl) - var(--spacing-sm) * 2 - 2px);
+  padding: var(--spacing-sm);
+  border: 1px solid var(--grey-80);
+  background-color: var(--grey-95);
+  outline: none;
+}
+
+.input {
+  margin: var(--spacing-sm) var(--spacing-sm) var(--spacing-md)
+    var(--spacing-sm);
+}
+.input .inputLabel {
+  margin-bottom: var(--spacing-sm);
+}
+.input label {
+  margin: 0px;
+}
+
+.input.invalid label {
+  color: var(--signal-danger);
+}
+
+input.invalid,
+.invalid input {
+  height: calc(var(--spacing-xxl) - var(--spacing-sm) * 2 - 2px);
+  border: 1px solid var(--signal-danger);
+  color: var(--signal-danger);
+}
+
+input.warning,
+.warning input {
+  height: calc(var(--spacing-xxl) - var(--spacing-sm) * 2 - 2px);
+  border: 1px solid var(--signal-warning);
+}
+
+input.invalid:focus,
+.invalid input:focus,
+input:focus {
+  height: calc(var(--spacing-xxl) - var(--spacing-sm) * 2 - 2px);
+  border: 1px solid var(--grey-80);
+  border-bottom: 2px solid var(--black);
+  padding-bottom: calc(var(--spacing-sm) - 1px);
+  color: var(--black);
+}
+
+input::placeholder {
+  color: var(--grey-60);
+}
+
+.inputContainer {
+  height: calc(var(--spacing-xxl));
+}
+
+.inputContainer input {
+  margin: 0px;
+  width: calc(100% - var(--spacing-sm) * 2 - 2px);
+  float: left;
+}
+
+.input button {
+  float: left;
+  background-color: transparent;
+  margin: 0px;
+  margin-left: calc(0px - var(--icon-xxl));
+}
+
+.input .saveState {
+  float: left;
+  margin: 0px;
+  margin-top: calc(((var(--spacing-xxl) - 2px) - var(--font-md)) / 2);
+  margin-left: calc(0px - var(--icon-xxl));
+}
+
+.input .saveState.withButton {
+  margin-left: calc(0px - var(--icon-xxl) - var(--icon-md));
+}
+
+.input button i.fas {
+  transition: color 0.2s ease;
+  color: var(--black);
+}
+
+.input button:hover:enabled i.fas {
+  color: var(--grey-40);
+}
+
+.input button:active:enabled i.fas {
+  color: var(--grey-20);
+}
+
+.input button:hover:enabled {
+  background-color: transparent;
+}
+.input button:active:enabled {
+  background-color: transparent;
+}
+
+.explanation {
+  font-size: 0.8em;
+  line-height: 1.618em;
+  color: var(--grey-60);
+}
+
+.invalid .explanation,
+.warning.invalid .explanation {
+  font-weight: var(--font-bold);
+  color: var(--signal-danger);
+}
+
+.warning .explanation {
+  color: var(--signal-warning);
+}

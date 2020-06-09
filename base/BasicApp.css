@@ -1,0 +1,86 @@
+.BasicApp {
+  text-align: center;
+  width: 100vw;
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px min-content 1fr min-content;
+  grid-template-areas:
+    "header"
+    "breadcrumbs"
+    "content"
+    "nav";
+}
+
+/* TABLET */
+@media (min-width: 37.5em) {
+  .BasicApp {
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    grid-template-areas:
+      "header header"
+      "nav breadcrumbs"
+      "nav content";
+  }
+}
+
+.BasicApp .breadcrumb {
+  grid-area: breadcrumbs;
+  align-self: center;
+  justify-self: center;
+  margin: 0px var(--spacing-md) 0px var(--spacing-md);
+  width: calc(100% - var(--spacing-md) * 2);
+  max-width: var(--content-max-width);
+  border-top-style: none;
+  transition: height 0.2s ease;
+  overflow: hidden;
+}
+
+.BasicApp .breadcrumb.empty {
+  border-bottom-style: none;
+  height: 0px;
+}
+
+main {
+  justify-self: start;
+  grid-area: content;
+  overflow-y: auto;
+  overflow-x: visible;
+  align-self: center;
+  justify-self: center;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
+  max-height: calc(100vh - 80px);
+  -webkit-overflow-scrolling: touch;
+}
+
+main > * {
+  padding-top: var(--spacing-md);
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  height: auto;
+  box-sizing: content-box;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 37.5em) {
+  main {
+    width: calc(100% - var(--spacing-md) * 2);
+    padding: 0px var(--spacing-md) 0px var(--spacing-md);
+    padding-top: 0px;
+    overflow: auto;
+    padding-top: 0px;
+    margin-bottom: 0px;
+  }
+  main > * {
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

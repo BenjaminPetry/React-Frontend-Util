@@ -1,0 +1,15 @@
+.action-bar {
+  box-sizing: content-box;
+  width: calc(100% - var(--spacing-md) * 2);
+  height: var(--spacing-xxl);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--grey-95);
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+.action-bar button {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

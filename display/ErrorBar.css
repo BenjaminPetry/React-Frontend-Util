@@ -1,0 +1,21 @@
+.error-bar {
+  padding: 0px;
+  height: auto;
+  max-height: 160px;
+  /* max-height: var(--spacing-xxl); */
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.error-bar.collapsed {
+  max-height: 0px;
+}
+
+.error-bar .error-content {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--signal-danger);
+  color: var(--white);
+  min-height: var(--spacing-xxl);
+  height: auto;
+}
