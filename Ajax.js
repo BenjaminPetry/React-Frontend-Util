@@ -36,16 +36,16 @@ AjaxInstance.interceptors.request.use(
 );
 
 AjaxInstance.init = function () {
-  AjaxInstance.get("authorize/meta", { noAuth: true }).then((data) => {
-    console.log(data);
-  });
-  AjaxInstance.get("users/list")
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  // AjaxInstance.get("authorize/meta", { noAuth: true }).then((data) => {
+  //   console.log(data);
+  // });
+  // AjaxInstance.get("users/list")
+  //   .then((data) => {
+  //     console.log(data);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 };
 
 AjaxInstance.setToken = function (token) {
