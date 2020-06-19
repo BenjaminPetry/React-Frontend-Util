@@ -5,7 +5,7 @@ This repository contains react components representing my design system.
 ## Setup
 
 Add this repository as a submodule under:
-```./src/util/```
+`./src/util/`
 
 ### Configuration
 
@@ -17,18 +17,24 @@ REACT_APP_AJAX_TIMEOUT=XXX in ms
 REACT_APP_ROUTER_BASENAME=XXX (in case the app is in a subdirectory, add it here with a leading and NO ending slash)
 ```
 
+Add the following to the `package.json` file, to make the build webpage also work in a subdirectory:
+
+```json
+  "homepage": "./",
+```
+
 ### Corporate Design
 
 Add the following to App.js:
-```import "./util/styles.css";```
+`import "./util/styles.css";`
 
 ### Include Libraries
 
-```yarn add axios```
+`yarn add axios`
 
 ## Start
 
-Replace the content of ```App.js``` with the following:
+Replace the content of `App.js` with the following:
 
 ```javascript
 import React from "react";
@@ -42,14 +48,14 @@ const homeRoute = {
   exact: "true",
   private: "false",
   icon: "\uf015",
-  title: "Home"
+  title: "Home",
 };
 const aboutRoute = {
   path: "/about",
   exact: "true",
   private: "false",
   icon: "\uf2bb",
-  title: "About me"
+  title: "About me",
 };
 
 function App() {
@@ -71,4 +77,4 @@ function App() {
 export default App;
 ```
 
-You can use the attribute ```type="header-element"``` to shift an element into the header of the BasicApp.
+You can use the attribute `type="header-element"` to shift an element into the header of the BasicApp.
