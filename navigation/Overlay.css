@@ -12,6 +12,26 @@ div.overlay {
   cursor: pointer;
 }
 
+div.overlay {
+  opacity: 0;
+}
+
+div.overlay.visible {
+  opacity: 1;
+}
+
+div.overlay.fade {
+  transition: opacity 0.5s ease-out;
+}
+
+div.overlay.visible.fade {
+  animation: 0.5s ease-out 0s 1 dissolve;
+}
+
+div.overlay.visible.on-closing {
+  opacity: 0;
+}
+
 div.overlay.hidden {
   display: none;
 }
