@@ -38,6 +38,7 @@ export default function VideoView({
           <ControlBar autoHide={false} className="my-class">
             <BigPlayButton position="center" />
             <ReplayControl seconds={10} order={2.2} />
+            <ReplayControl seconds={5} order={2.2} />
             <VolumeMenuButton vertical />
             <PlaybackRateMenuButton
               rates={[2, 1.75, 1.5, 1.25, 1, 0.75, 0.5]}

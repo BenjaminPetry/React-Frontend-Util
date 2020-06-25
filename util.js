@@ -38,6 +38,34 @@ export function parseTime(time) {
   return timeSeconds;
 }
 
+export function formatDate(date, format) {
+  if (format.indexOf("d") >= 0) {
+    format = format.replace("d", (date.getDate() + "").padStart(2, "0"));
+  }
+  if (format.indexOf("m") >= 0) {
+    format = format.replace("m", (date.getMonth() + 1 + "").padStart(2, "0"));
+  }
+  if (format.indexOf("Y") >= 0) {
+    format = format.replace("Y", (date.getFullYear() + "").padStart(4, "0"));
+  }
+  if (format.indexOf("H") >= 0) {
+    format = format.replace("H", (date.getHours() + "").padStart(2, "0"));
+  }
+  if (format.indexOf("i") >= 0) {
+    format = format.replace("i", (date.getMinutes() + "").padStart(2, "0"));
+  }
+  if (format.indexOf("sss") >= 0) {
+    format = format.replace(
+      "sss",
+      (date.getMilliseconds() + "").padStart(3, "0")
+    );
+  }
+  if (format.indexOf("s") >= 0) {
+    format = format.replace("s", (date.getSeconds() + "").padStart(2, "0"));
+  }
+  return format;
+}
+
 export class CustomError extends Error {
   constructor(message, status, data) {
     super(message);
