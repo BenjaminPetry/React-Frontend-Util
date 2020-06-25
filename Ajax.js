@@ -11,7 +11,7 @@ export const AjaxInstance = Axios.create({
 });
 AjaxInstance.interceptors.response.use(
   (response) => {
-    console.log(response);
+    //console.log(response);
     return handleResponse(response);
   },
   (error) => {
