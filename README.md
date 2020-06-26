@@ -31,6 +31,7 @@ Add the following to App.js:
 ### Include Libraries
 
 `yarn add axios`
+`yarn add video-react`
 
 ## Start
 
