@@ -32,6 +32,9 @@ Add the following to App.js:
 
 `yarn add axios`
 `yarn add video-react`
+`yarn add @fortawesome/fontawesome-free`
+
+Add `<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/all.css" />` to `index.html` in `public`.
 
 ## Start
 

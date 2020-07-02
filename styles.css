@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600");
-@import url("https://use.fontawesome.com/releases/v5.4.1/css/all.css");
 
 :root {
   /* ###########################################################
@@ -488,6 +487,20 @@ button i.fas {
 .iconbutton.primary i.fas,
 button.primary i.fas {
   color: var(--white);
+}
+
+.center-box-100 {
+  width: 100%;
+}
+
+.center-box,
+.center-box-100 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* width: 100%; */
 }
 
 /* .secondary.iconbutton {

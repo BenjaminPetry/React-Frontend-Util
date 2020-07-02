@@ -8,13 +8,15 @@ export default function LiveLoader({
   ...rest
 }) {
   return (
-    <div
-      className={
-        "live-loader " + (visible ? "visible " : "hidden ") + className
-      }
-      {...rest}
-    >
-      {text}
+    <div className={"live-loader-wrapper " + className}>
+      <div
+        className={
+          "live-loader center-box " + (visible ? "visible " : "hidden ")
+        }
+        {...rest}
+      >
+        {text}
+      </div>
     </div>
   );
 }
