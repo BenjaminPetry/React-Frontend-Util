@@ -66,6 +66,15 @@ export class AuthenticationError extends CustomError {} // An error that occurs 
 export class ServerError extends CustomError {} // An error that occurs when the server returns an error code other than 401
 
 const handleResponse = function (response) {
+  if (response === undefined) {
+    return Promise.reject(
+      new ServerError(
+        "Could not connect to the server. Try again later.",
+        503,
+        null
+      )
+    );
+  }
   if (response.status === 204) {
     // 204-response does not have any content
     return Promise.resolve();
