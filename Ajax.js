@@ -80,6 +80,15 @@ const handleResponse = function (response) {
     return Promise.resolve();
   }
   let rData = response.data;
+  if (rData === undefined || rData === null) {
+    return Promise.reject(
+      new ServerError(
+        "Could not connect to the server. Try again later.",
+        503,
+        null
+      )
+    );
+  }
   if (
     !rData.hasOwnProperty("status") ||
     !rData.hasOwnProperty("message") ||
