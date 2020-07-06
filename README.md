@@ -2,6 +2,9 @@
 
 This repository contains react components representing my design system.
 
+## Disclaimer
+This software is provided on an "AS IS" BASIS, without warranties or conditions of any kind, either express or implied.
+
 ## Setup
 
 Add this repository as a submodule under:
