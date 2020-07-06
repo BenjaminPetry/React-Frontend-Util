@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React from "react";
 import "./ToggleIcon.css";
 
@@ -10,7 +15,7 @@ export default function ToggleIcon({
   return (
     <i
       className={"icon toggleIcon " + (state ? "selected" : "unselected")}
-      onClick={event => {
+      onClick={(event) => {
         onClick(event, state, !state);
       }}
       {...rest}

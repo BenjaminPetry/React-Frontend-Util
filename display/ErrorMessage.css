@@ -1,0 +1,54 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
+.error-window {
+  position: absolute;
+  max-width: 500px;
+  background-color: var(--grey-95);
+  box-shadow: 0 0 10px var(--black);
+  padding: 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.error-title {
+  text-align: center;
+  background-color: var(--state-caution);
+  position: relative;
+}
+
+.error-title .icon {
+  font-size: var(--font-xxl);
+  /* font-weight: 300; */
+  color: var(--white);
+}
+
+.error-content {
+  padding: 16px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.error-content .error-intro {
+  font-weight: var(--font-bold);
+}
+
+.error-content div {
+  font-size: var(--font-sm);
+  margin-bottom: 16px;
+  color: var(--black);
+}
+
+.error-window button {
+  font-size: var(--font-sm);
+  padding: 16px;
+  margin-top: 24px;
+  min-height: auto;
+  border-radius: 0px;
+  box-shadow: none;
+}

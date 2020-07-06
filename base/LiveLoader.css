@@ -1,4 +1,10 @@
-/** From: https://projects.lukehaas.me/css-loaders/ */
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
+/** Based on: https://projects.lukehaas.me/css-loaders/ */
 
 .live-loader.hidden {
   display: none;

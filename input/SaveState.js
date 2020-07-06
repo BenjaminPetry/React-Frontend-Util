@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React from "react";
 import "./SaveState.css";
 
@@ -5,7 +10,7 @@ export const SaveStateEnum = {
   FAILED: 0,
   SUCCEED: 1,
   NOT_SAVED_YET: 2,
-  SAVING: 3
+  SAVING: 3,
 };
 
 export default function SaveState({ state, className = "" }) {

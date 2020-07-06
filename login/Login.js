@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React, { useState, useEffect } from "react";
 
 import { UserService } from "../services/UserService";
@@ -15,7 +20,7 @@ export const LoginRoute = {
   path: "/login",
   icon: "\uf2f6",
   title: "Login",
-  menuItem: "false"
+  menuItem: "false",
 };
 
 export default function Login() {
@@ -34,16 +39,16 @@ export default function Login() {
   useEffect(() => {
     setIsLoading(true);
     UserService.logout()
-      .then(response => {
+      .then((response) => {
         dispatch({ type: "user", user: null });
       })
-      .finally(response => {
+      .finally((response) => {
         setIsLoading(false);
       });
     return function cleanup() {};
   }, [dispatch]);
 
-  const validateEmail = function(emailToValidate) {
+  const validateEmail = function (emailToValidate) {
     setEmailError("");
     if (emailToValidate === "") {
       setEmailError("Please enter your e-mail address.");
@@ -56,7 +61,7 @@ export default function Login() {
     return true;
   };
 
-  const validatePassword = function(passwordToValidate) {
+  const validatePassword = function (passwordToValidate) {
     setPasswordError("");
     if (passwordToValidate.trim() === "") {
       setPasswordError("Please enter your password.");
@@ -65,7 +70,7 @@ export default function Login() {
     return true;
   };
 
-  const login = function(event) {
+  const login = function (event) {
     event.preventDefault();
     setError("");
     //const emailValid = validateEmail(email.trim());
@@ -76,12 +81,12 @@ export default function Login() {
     localStorage.setItem("lastEmail", email.trim());
     setIsLoading(true);
     UserService.login(email.trim(), password)
-      .then(user => {
+      .then((user) => {
         dispatch({ type: "user", user: user });
         setIsLoading(false);
         history.replace(sourceLocation.from);
       })
-      .catch(err => {
+      .catch((err) => {
         if (err.name === "ApplicationError") {
           setError(err.message);
         } else {
@@ -105,7 +110,7 @@ export default function Login() {
             placeholder="Enter your e-mail"
             explanation={emailError}
             valid={emailError === ""}
-            onChange={event => setEmail(event.target.value)}
+            onChange={(event) => setEmail(event.target.value)}
             autoComplete="username"
           ></Textfield>
           <Textfield
@@ -117,13 +122,13 @@ export default function Login() {
             placeholder="Enter your password"
             explanation={passwordError}
             valid={passwordError === ""}
-            onChange={event => setPassword(event.target.value)}
+            onChange={(event) => setPassword(event.target.value)}
             autoComplete="current-password"
           ></Textfield>
           <ActionBar>
             <button
               className="primary"
-              onClick={event => login(event)}
+              onClick={(event) => login(event)}
               disabled={isLoading}
             >
               Login

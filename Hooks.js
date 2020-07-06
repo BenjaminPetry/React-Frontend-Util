@@ -1,4 +1,9 @@
-// Source: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+// Based on: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 import { useEffect, useRef } from "react";
 
 export function useInterval(callback, delay) {

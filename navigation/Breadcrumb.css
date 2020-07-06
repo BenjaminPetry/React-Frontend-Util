@@ -1,3 +1,9 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
 ul.breadcrumb {
   width: 100%;
   height: var(--spacing-xl);

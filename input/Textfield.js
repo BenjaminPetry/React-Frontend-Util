@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React, { useEffect, useRef } from "react";
 import "./Textfield.css";
 import SaveState from "./SaveState.js";
@@ -20,11 +25,11 @@ export default function Textfield({
   buttonicon = "",
   buttoniconTitle = null,
   buttoniconOnClick = null, // click on the button icon - default: onSubmit method is being used
-  onChange = event => {}, // use event.target.value for the field's value
-  onSubmit = value => {},
+  onChange = (event) => {}, // use event.target.value for the field's value
+  onSubmit = (value) => {},
   submitOnFocusLost = false,
   onFocusAllSelect = false,
-  onFocusChange = hasFocus => {},
+  onFocusChange = (hasFocus) => {},
   disabled = false,
   ...rest
 }) {
@@ -64,7 +69,7 @@ export default function Textfield({
           type={realType}
           value={value}
           lang={"en-150"}
-          onChange={event => {
+          onChange={(event) => {
             // if (type === "number") {
             //   console.log(event.target.value);
             //   const numericValue = event.target.value.replace(".", ",");
@@ -74,7 +79,7 @@ export default function Textfield({
             onChange(event);
           }}
           placeholder={placeholder}
-          onFocus={event => {
+          onFocus={(event) => {
             onFocusChange(true);
             if (
               onFocusAllSelect &&
@@ -84,14 +89,14 @@ export default function Textfield({
               inputRef.current.select();
             }
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             onFocusChange(false);
             if (submitOnFocusLost) {
               onSubmit(value);
             }
           }}
           autoFocus={focus}
-          onKeyUp={event => {
+          onKeyUp={(event) => {
             if (event.key === "Enter") {
               event.stopPropagation();
               onSubmit(value);
@@ -102,7 +107,7 @@ export default function Textfield({
         {buttonicon ? (
           <button
             className="iconbutton"
-            onClick={event =>
+            onClick={(event) =>
               buttoniconOnClick !== null
                 ? buttoniconOnClick(event)
                 : onSubmit(value)

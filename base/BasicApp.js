@@ -1,3 +1,9 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
 import React, { createContext, useContext, useReducer, useState } from "react";
 
 import "./BasicApp.css";
@@ -9,7 +15,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 
 export const AppContext = createContext();
@@ -20,19 +26,19 @@ export default function BasicApp({ children = [], enableSearch = true }) {
     search: "",
     user: localStorage.getItem("user")
       ? JSON.parse(localStorage.getItem("user"))
-      : null
+      : null,
   };
-  const reduceAppContext = function(state, action) {
+  const reduceAppContext = function (state, action) {
     switch (action.type) {
       case "search":
         return {
           ...state,
-          search: action.search
+          search: action.search,
         };
       case "user":
         return {
           ...state,
-          user: action.user
+          user: action.user,
         };
       default:
         throw new Error();
@@ -46,10 +52,10 @@ export default function BasicApp({ children = [], enableSearch = true }) {
 
   const [appSearch, setAppSearch] = useState(enableSearch ? "" : null);
   const childrenArray = Array.isArray(children) ? children : [children];
-  const childrenWithPath = childrenArray.filter(element => {
+  const childrenWithPath = childrenArray.filter((element) => {
     return element.props.hasOwnProperty("path");
   });
-  const currentViews = childrenWithPath.map(element => {
+  const currentViews = childrenWithPath.map((element) => {
     return element.props;
   });
 
@@ -60,8 +66,8 @@ export default function BasicApp({ children = [], enableSearch = true }) {
           views={currentViews}
           appContext={appContext}
           searchQuery={appSearch}
-          onSearchChanged={query => setAppSearch(query)}
-          onSearchSubmit={query => {}}
+          onSearchChanged={(query) => setAppSearch(query)}
+          onSearchSubmit={(query) => {}}
         >
           {childrenArray.filter((view, index) => {
             return view.props.type === "header-element";
@@ -86,7 +92,7 @@ export default function BasicApp({ children = [], enableSearch = true }) {
                         <Redirect
                           to={{
                             pathname: LoginRoute.path,
-                            state: { from: location }
+                            state: { from: location },
                           }}
                         />
                       )

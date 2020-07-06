@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React, { useEffect } from "react";
 import {
   ControlBar,
@@ -5,7 +10,7 @@ import {
   ReplayControl,
   PlaybackRateMenuButton,
   VolumeMenuButton,
-  BigPlayButton
+  BigPlayButton,
 } from "video-react";
 import "video-react/dist/video-react.css"; // import css
 import "./VideoView.css";
@@ -14,7 +19,7 @@ export default function VideoView({
   video,
   className = "",
   preload = "auto",
-  onStateChanged = null
+  onStateChanged = null,
 }) {
   const playerRef = React.createRef();
 

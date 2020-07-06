@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React from "react";
 
 import "./Tile.css";
@@ -8,7 +13,7 @@ export default function Tile({
   title = "",
   isPrimaryTitle = false,
   className = "",
-  children
+  children,
 }) {
   const childrenArray = Array.isArray(children) ? children : [children];
   const actionBar = childrenArray.filter((child, index) => {

@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React from "react";
 import "./RatingScale.css";
 import SaveState from "./SaveState.js";
@@ -10,7 +15,7 @@ export default function RatingScale({
   labelMax = "",
   savingState = null,
   disabled = false,
-  onChange = (oldvalue, newvalue) => {}
+  onChange = (oldvalue, newvalue) => {},
 }) {
   return (
     <div className="RatingScaleContainer">

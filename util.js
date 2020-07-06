@@ -1,10 +1,15 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 export function formatSeconds(
   seconds,
   { hh = true, mm = true, ss = true, sss = true } = {
     hh: true,
     mm: true,
     ss: true,
-    sss: true
+    sss: true,
   }
 ) {
   var tmp = seconds;
@@ -82,7 +87,7 @@ export function validateEmail(email) {
 
 export function setFocus(focusMethod) {
   focusMethod(false);
-  window.setTimeout(function() {
+  window.setTimeout(function () {
     focusMethod(true);
   }, 100);
 }

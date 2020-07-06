@@ -1,8 +1,13 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import { AjaxInstance } from "../util/Ajax";
 
 export const SyncService = {
   get,
-  sync
+  sync,
 };
 
 function getDateInMs() {
@@ -16,10 +21,10 @@ async function get(deviceId) {
 async function sync(deviceId) {
   return AjaxInstance.post("?action=sync-start", {
     "device-id": deviceId,
-    date: getDateInMs()
-  }).then(sync => {
+    date: getDateInMs(),
+  }).then((sync) => {
     const syncId = sync.ID;
-    var promises = [200, 400, 600, 700, 800, 1000].map(item => {
+    var promises = [200, 400, 600, 700, 800, 1000].map((item) => {
       return delayedSyncUpdate(deviceId, syncId, item);
     });
     return Promise.all(promises);
@@ -32,8 +37,8 @@ async function delayedSyncUpdate(deviceId, syncId, delay) {
       AjaxInstance.post("?action=sync-update", {
         "device-id": deviceId,
         "sync-id": syncId,
-        date: getDateInMs()
-      }).finally(sync => {
+        date: getDateInMs(),
+      }).finally((sync) => {
         resolve(sync);
       });
     }, delay);

@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React from "react";
 import { useRouteMatch } from "react-router-dom";
 
@@ -6,13 +11,13 @@ export function NavItem({
   icon,
   label,
   onClick,
-  className = ""
+  className = "",
 }) {
-  const onClickFunction = event => onClick(event);
+  const onClickFunction = (event) => onClick(event);
   const buttonClass = useRouteMatch({
     path: view.path,
     exact: true,
-    strict: false
+    strict: false,
   })
     ? "selected"
     : "";
@@ -23,7 +28,7 @@ export function NavItem({
         (className === "" ? "" : " " + className) +
         (buttonClass ? " " + buttonClass : "")
       }
-      onClick={event => {
+      onClick={(event) => {
         onClickFunction(event);
       }}
       title={label}

@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React, { useState, useEffect } from "react";
 
 import Tile from "../display/Tile";
@@ -17,16 +22,16 @@ export default function FormTile({
   onLoad = () => {
     return Promise.resolve();
   },
-  onSubmit = event => {
+  onSubmit = (event) => {
     return Promise.resolve();
-  }
+  },
 }) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     let _isMounted = true;
     setIsLoading(true);
-    onLoad().finally(response => {
+    onLoad().finally((response) => {
       if (_isMounted) {
         setIsLoading(false);
       }
@@ -36,10 +41,10 @@ export default function FormTile({
     };
   }, [onLoad]);
 
-  const submit = function(event) {
+  const submit = function (event) {
     event.preventDefault();
     setIsLoading(true);
-    onSubmit().finally(response => {
+    onSubmit().finally((response) => {
       setIsLoading(false);
     });
   };
@@ -53,7 +58,7 @@ export default function FormTile({
           <ActionBar>
             <button
               className="primary"
-              onClick={event => submit(event)}
+              onClick={(event) => submit(event)}
               disabled={isLoading || disabled}
             >
               {submitText}

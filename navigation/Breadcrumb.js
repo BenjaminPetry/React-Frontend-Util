@@ -1,3 +1,8 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
 import React from "react";
 
 import "./Breadcrumb.css";
@@ -6,7 +11,7 @@ import ProgressButton from "../input/ProgressButton";
 export default function Breadcrumb({
   currentElement = null,
   elementHierarchy = new Set(),
-  onElementChange = element => {}
+  onElementChange = (element) => {},
 }) {
   var hierarchy = [];
   if (currentElement != null) {
@@ -29,7 +34,7 @@ export default function Breadcrumb({
                 <ProgressButton
                   isFirst={index === 0}
                   isLast={index === hierarchy.length - 1}
-                  onClick={event => onElementChange(view)}
+                  onClick={(event) => onElementChange(view)}
                 >
                   {view.title}
                 </ProgressButton>
