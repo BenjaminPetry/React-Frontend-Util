@@ -509,6 +509,10 @@ button.primary i.fas {
   /* width: 100%; */
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* .secondary.iconbutton {
   color: var(--grey-500);
   background-color: var(--black);

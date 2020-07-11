@@ -12,7 +12,12 @@ export default function ErrorMessage({
   onAction = () => {},
 }) {
   return (
-    <div className="error-window center-box-100">
+    <div
+      className={
+        "error-window center-box-100 " +
+        (message === "" || message === null ? "hidden" : "visible")
+      }
+    >
       <div className="error-title">
         <div className="icon center-box">{"\uf057"}</div>
       </div>
