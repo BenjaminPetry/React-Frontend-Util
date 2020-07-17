@@ -118,7 +118,7 @@ const handleResponse = function (response) {
     );
   }
   if (status === 500) {
-    return Promise.reject(new ServerError(data.message, status, data));
+    return Promise.reject(new ServerError(message, status, data));
   }
   return Promise.reject(new ApplicationError(message, status, data));
 };

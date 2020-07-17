@@ -8,7 +8,7 @@ import "./ErrorMessage.css";
 
 export default function ErrorMessage({
   message,
-  actionText,
+  actionText = "Close",
   onAction = () => {},
 }) {
   return (

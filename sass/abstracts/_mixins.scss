@@ -1,0 +1,7 @@
+@mixin animationDelay($delayMin, $delaySteps, $maxChildren) {
+  @for $i from 1 through $maxChildren {
+    &:nth-child(#{$i}) {
+      animation-delay: ($delayMin + $delaySteps * ($i - 1)) * 1s;
+    }
+  }
+}

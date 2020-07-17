@@ -1,0 +1,83 @@
+/**
+  * Inspired from https://cdpn.io/ingomc/fullembedgrid/ONrMqe?animations=run&type=embed
+  */
+
+.spinner {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+  height: 10rem;
+  font-size: 1.6rem;
+  background-color: transparent;
+  box-sizing: border-box;
+
+  & * {
+    box-sizing: inherit;
+  }
+
+  &__circle {
+    width: 100%;
+    height: 100%;
+    animation-name: anim-spinner;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &-wrapper {
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+    }
+
+    &-wrapper--bottom {
+      transform: rotate(180deg);
+    }
+
+    &-wrapper--bottom &-inner {
+      animation-name: anim-spinner-inner-2;
+    }
+
+    &-inner {
+      width: 100%;
+      height: 200%;
+      border: 0.5em solid #000;
+      border-bottom: 0.5em solid transparent;
+      border-right: 0.5em solid transparent;
+      border-radius: 50%;
+      animation-name: anim-spinner-inner-1;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(0.25, 0.1, 0.5, 1);
+    }
+  }
+}
+
+@keyframes anim-spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes anim-spinner-inner-1 {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(205deg);
+  }
+}
+@keyframes anim-spinner-inner-2 {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(-115deg);
+  }
+}

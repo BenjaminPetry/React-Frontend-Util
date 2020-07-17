@@ -90,10 +90,6 @@
    ###################### ELEMENT COLORS #####################
    ########################################################### */
 
-* {
-  color: var(--black);
-}
-
 html,
 body {
   background-color: var(--grey-90);
@@ -106,6 +102,7 @@ body {
   left: 0px;
   right: 0px;
   bottom: 0px;
+  color: var(--black);
 }
 .inverse {
   color: var(--white);
@@ -493,24 +490,6 @@ button i.fas {
 .iconbutton.primary i.fas,
 button.primary i.fas {
   color: var(--white);
-}
-
-.center-box-100 {
-  width: 100%;
-}
-
-.center-box,
-.center-box-100 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  /* width: 100%; */
-}
-
-.hidden {
-  display: none !important;
 }
 
 /* .secondary.iconbutton {

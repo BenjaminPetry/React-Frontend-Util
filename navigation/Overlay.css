@@ -43,12 +43,12 @@ div.overlay.hidden {
 }
 
 div.overlay > * {
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   cursor: initial;
-  margin-top: 50vh;
+  /* margin-top: 50vh; */
 
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }

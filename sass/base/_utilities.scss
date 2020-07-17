@@ -1,0 +1,17 @@
+.center-box-100 {
+  width: 100%;
+}
+
+.center-box,
+.center-box-100 {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
