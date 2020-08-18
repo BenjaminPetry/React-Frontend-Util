@@ -42,7 +42,6 @@ export default function Login({
     } else if (action === LOGIN_ACTIONS.LOGOUT) {
       new_url = url + "/logout?request_url=" + request_url;
     }
-    //console.log("Login: New URL: " + new_url);
     setUsingUrl(new_url);
   }, [url, request_url, action, email]);
 
@@ -50,7 +49,6 @@ export default function Login({
   const onLocationChanged = function (event) {
     try {
       let cUrl = event.target.contentWindow.location.href;
-      console.log("CURL: " + cUrl);
       if (
         cUrl &&
         cUrl.split("?")[0].endsWith(process.env.REACT_APP_AUTH_SELF)
@@ -58,7 +56,6 @@ export default function Login({
         let result = cUrl.match(regex_response_property);
         if (result && result.length > 1) {
           let response_type = result[1];
-          //console.log("Login: Response Type: " + response_type);
           on_action_done(true, response_type, cUrl);
         }
       }

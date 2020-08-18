@@ -43,11 +43,11 @@ export default function AuthProvider({ children }) {
     user: user,
     scope: scope,
     login: (callback, email = "") => {
-      console.log("AuthContext: login");
+      console.log("AuthContext: Login initiated");
       add(createAction(LOGIN_ACTIONS.LOGIN_NORMAL, callback, { email: email }));
     },
     logout: (callback) => {
-      console.log("AuthContext: logout");
+      console.log("AuthContext: Logout initiated");
       add(createAction(LOGIN_ACTIONS.LOGOUT, callback));
     },
   };
@@ -70,7 +70,7 @@ export default function AuthProvider({ children }) {
           break;
         case RESPONSE_TYPE.ACCESS_CODE:
           const access_token = AccessTokenService.extract(cUrl);
-          console.log(access_token);
+
           // AccessTokenService.request checks for access_token === null
           AccessTokenService.request(
             process.env.REACT_APP_AUTH_SERVER,
@@ -86,13 +86,12 @@ export default function AuthProvider({ children }) {
               next();
             })
             .catch((err) => {
-              console.log("Error: ", err);
               current_action.cb(false);
               next();
             });
           break;
         case RESPONSE_TYPE.LOGOUT_SUCCESSFUL:
-          console.log("Logout successful");
+          console.log("AuthContext: Logout successful");
           AjaxInstance.setToken(null);
           setUser(null);
           setScope(null);
@@ -100,7 +99,7 @@ export default function AuthProvider({ children }) {
           next();
           break;
         case RESPONSE_TYPE.LOGOUT_FAILED:
-          console.log("Logout failed");
+          console.log("AuthContext: Logout failed");
           current_action.cb(false);
           next();
           break;
