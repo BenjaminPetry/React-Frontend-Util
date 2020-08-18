@@ -14,9 +14,9 @@ export const AjaxInstance = Axios.create({
   withCredentials: false,
   responseType: "json",
 });
+
 AjaxInstance.interceptors.response.use(
   (response) => {
-    //console.log(response);
     return handleResponse(response);
   },
   (error) => {
@@ -30,7 +30,6 @@ AjaxInstance.interceptors.request.use(
       config.hasOwnProperty("noAuth") &&
       config.headers.hasOwnProperty("Authorization")
     ) {
-      console.log(config.headers);
       delete config.headers["Authorization"];
     }
     return config;
@@ -40,19 +39,19 @@ AjaxInstance.interceptors.request.use(
   }
 );
 
-AjaxInstance.init = function () {
-  // AjaxInstance.get("authorize/meta", { noAuth: true }).then((data) => {
-  //   console.log(data);
-  // });
-  // AjaxInstance.get("users/list")
-  //   .then((data) => {
-  //     console.log(data);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+/**
+ * Sets a handler that handles a 401 error (e.g., login)
+ *
+ * @param {function} handleAuthError handles the authorization error (gets new access_token or redirects to webpage)
+ */
+AjaxInstance.setAuthorizationErrorHandler = function (handleAuthError) {
+  AjaxInstance.authorizationHandler = handleAuthError;
 };
 
+/**
+ * Sets a new access token
+ * @param {string} token the access token
+ */
 AjaxInstance.setToken = function (token) {
   if (
     token === null &&
@@ -80,10 +79,12 @@ const handleResponse = function (response) {
       )
     );
   }
+
   if (response.status === 204) {
     // 204-response does not have any content
     return Promise.resolve();
   }
+
   let rData = response.data;
   if (rData === undefined || rData === null) {
     return Promise.reject(
@@ -112,13 +113,32 @@ const handleResponse = function (response) {
   if (status >= 200 && status <= 204) {
     return Promise.resolve(response.data);
   }
+
+  if (
+    status === 401 &&
+    AjaxInstance.authorizationHandler !== undefined &&
+    AjaxInstance.authorizationHandler !== null
+  ) {
+    return AjaxInstance.authorizationHandler()
+      .then((_) => {
+        return AjaxInstance.request(response.config);
+      })
+      .catch((err) => {
+        return Promise.reject(
+          new AuthenticationError("Access denied", status, data)
+        );
+      });
+  }
+
   if (status === 401 || status === 403) {
     return Promise.reject(
       new AuthenticationError("Access denied", status, data)
     );
   }
+
   if (status === 500) {
     return Promise.reject(new ServerError(message, status, data));
   }
+
   return Promise.reject(new ApplicationError(message, status, data));
 };

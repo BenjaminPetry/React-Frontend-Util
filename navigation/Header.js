@@ -6,8 +6,14 @@
 import React from "react";
 import "./Header.css";
 import { Switch, Route } from "react-router-dom";
-import { LoginRoute } from "../login/Login";
+
 import { useHistory } from "react-router-dom";
+export const LoginRoute = {
+  path: "/login",
+  icon: "\uf2f6",
+  title: "Login",
+  menuItem: "false",
+};
 
 export default function Header({ views, children, appContext }) {
   let history = useHistory();

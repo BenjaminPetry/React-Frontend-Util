@@ -3,139 +3,86 @@
  * This software is provided on an "AS IS" BASIS,
  * without warranties or conditions of any kind, either express or implied.
  */
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import { UserService } from "../services/UserService";
-import Textfield from "../input/Textfield";
-import Tile from "../display/Tile";
-import ActionBar from "../navigation/ActionBar";
-import ErrorBar from "../display/ErrorBar";
-import { validateEmail as isEmailValid } from "../util";
-import { useHistory, useLocation } from "react-router-dom";
-import { useAppContext } from "../base/BasicApp";
+import "./Login.scss";
+import Spinner from "../base/Spinner";
 
-import "./Login.css";
-
-export const LoginRoute = {
-  path: "/login",
-  icon: "\uf2f6",
-  title: "Login",
-  menuItem: "false",
+export const LOGIN_ACTIONS = {
+  LOGIN_SILENT: "LOGIN_SILENT",
+  LOGIN_NORMAL: "LOGIN",
+  LOGOUT: "LOGOUT",
 };
 
-export default function Login() {
-  let history = useHistory();
-  let location = useLocation();
-  let sourceLocation = location.state || { from: { pathname: "/" } };
+const regex_response_property = /response_type=(\w*)/;
+export const RESPONSE_TYPE = {
+  ACCESS_CODE: "access_code",
+  LOGIN_REQUIRED: "login_required",
+  LOGOUT_SUCCESSFUL: "logout_successful",
+  LOGOUT_FAILED: "logout_failed",
+};
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [email, setEmail] = useState(localStorage.getItem("lastEmail") || "");
-  const [emailError, setEmailError] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [error, setError] = useState("");
-  const [, dispatch] = useAppContext();
+export default function Login({
+  url,
+  request_url,
+  email,
+  action,
+  on_action_done = (result, response_type, cUrl) => {}, // result = true==success, false==failed
+}) {
+  const [usingUrl, setUsingUrl] = useState("");
 
+  // create the url based on the given action
   useEffect(() => {
-    setIsLoading(true);
-    UserService.logout()
-      .then((response) => {
-        dispatch({ type: "user", user: null });
-      })
-      .finally((response) => {
-        setIsLoading(false);
-      });
-    return function cleanup() {};
-  }, [dispatch]);
-
-  const validateEmail = function (emailToValidate) {
-    setEmailError("");
-    if (emailToValidate === "") {
-      setEmailError("Please enter your e-mail address.");
-      return false;
+    var new_url = url + "/login?request_url=" + request_url;
+    if (email !== "") {
+      new_url += "&email=" + email;
     }
-    if (!isEmailValid(emailToValidate)) {
-      setEmailError("Please enter a valid e-mail address.");
-      return false;
+    if (action === LOGIN_ACTIONS.LOGIN_SILENT) {
+      new_url += "&silent=true";
+    } else if (action === LOGIN_ACTIONS.LOGOUT) {
+      new_url = url + "/logout?request_url=" + request_url;
     }
-    return true;
-  };
+    //console.log("Login: New URL: " + new_url);
+    setUsingUrl(new_url);
+  }, [url, request_url, action, email]);
 
-  const validatePassword = function (passwordToValidate) {
-    setPasswordError("");
-    if (passwordToValidate.trim() === "") {
-      setPasswordError("Please enter your password.");
-      return false;
-    }
-    return true;
-  };
-
-  const login = function (event) {
-    event.preventDefault();
-    setError("");
-    //const emailValid = validateEmail(email.trim());
-    const passwordValid = validatePassword(password);
-    // if (!emailValid || !passwordValid) {
-    //   return;
-    // }
-    localStorage.setItem("lastEmail", email.trim());
-    setIsLoading(true);
-    UserService.login(email.trim(), password)
-      .then((user) => {
-        dispatch({ type: "user", user: user });
-        setIsLoading(false);
-        history.replace(sourceLocation.from);
-      })
-      .catch((err) => {
-        if (err.name === "ApplicationError") {
-          setError(err.message);
-        } else {
-          setError("Cannot connect to the server. Please try again later.");
+  // watch for url changes in the iframe and if it is authorize url, get its response_type
+  const onLocationChanged = function (event) {
+    try {
+      let cUrl = event.target.contentWindow.location.href;
+      console.log("CURL: " + cUrl);
+      if (
+        cUrl &&
+        cUrl.split("?")[0].endsWith(process.env.REACT_APP_AUTH_SELF)
+      ) {
+        let result = cUrl.match(regex_response_property);
+        if (result && result.length > 1) {
+          let response_type = result[1];
+          //console.log("Login: Response Type: " + response_type);
+          on_action_done(true, response_type, cUrl);
         }
-        setIsLoading(false);
-      });
+      }
+    } catch (err) {}
   };
 
   return (
-    <div className={"LoginContainer"}>
-      <form onSubmit={login}>
-        <Tile>
-          <ErrorBar message={error}></ErrorBar>
-          <Textfield
-            label="E-Mail"
-            name="email"
-            type="email"
-            value={email}
-            disabled={isLoading}
-            placeholder="Enter your e-mail"
-            explanation={emailError}
-            valid={emailError === ""}
-            onChange={(event) => setEmail(event.target.value)}
-            autoComplete="username"
-          ></Textfield>
-          <Textfield
-            label="Password"
-            name="password"
-            type="password"
-            value={password}
-            disabled={isLoading}
-            placeholder="Enter your password"
-            explanation={passwordError}
-            valid={passwordError === ""}
-            onChange={(event) => setPassword(event.target.value)}
-            autoComplete="current-password"
-          ></Textfield>
-          <ActionBar>
-            <button
-              className="primary"
-              onClick={(event) => login(event)}
-              disabled={isLoading}
-            >
-              Login
-            </button>
-          </ActionBar>
-        </Tile>
-      </form>
+    <div
+      className={
+        "login-wrapper login-wrapper--" +
+        (action === LOGIN_ACTIONS.LOGIN_SILENT ? "hidden" : "visible")
+      }
+    >
+      <Spinner className="login-wrapper__spinner"></Spinner>
+      {/** Avoid circular loops */}
+      {window.location.href
+        .split("?")[0]
+        .endsWith(process.env.REACT_APP_AUTH_SELF) ? null : (
+        <iframe
+          src={usingUrl}
+          title="Login"
+          onLoad={(event) => onLocationChanged(event)}
+        ></iframe>
+      )}
     </div>
   );
 }

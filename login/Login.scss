@@ -1,0 +1,35 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
+.login-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  background-color: #e6e7e8;
+
+  &--visible {
+    visibility: visible;
+  }
+  &--hidden {
+    visibility: hidden;
+  }
+
+  iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    z-index: 10002;
+  }
+
+  &__spinner {
+    z-index: -1;
+  }
+}

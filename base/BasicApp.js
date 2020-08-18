@@ -9,7 +9,6 @@ import React, { createContext, useContext, useReducer, useState } from "react";
 import "./BasicApp.css";
 import Nav from "../navigation/Nav.js";
 import Header from "../navigation/Header.js";
-import { LoginRoute } from "../login/Login";
 
 import {
   BrowserRouter as Router,
@@ -17,6 +16,13 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+
+export const LoginRoute = {
+  path: "/login",
+  icon: "\uf2f6",
+  title: "Login",
+  menuItem: "false",
+};
 
 export const AppContext = createContext();
 export const useAppContext = () => useContext(AppContext);
