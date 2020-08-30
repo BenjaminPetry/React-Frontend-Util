@@ -1,4 +1,4 @@
-import { AjaxInstance } from "../Ajax";
+import { AjaxInstance } from "../../Ajax";
 
 const regex_access_code = /access_code=(\w*)/;
 

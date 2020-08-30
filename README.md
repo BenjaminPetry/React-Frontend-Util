@@ -19,6 +19,13 @@ REACT_APP_AJAX_TIMEOUT=XXX in ms
 REACT_APP_ROUTER_BASENAME=XXX (in case the app is in a subdirectory, add it here with a leading and NO ending slash)
 ```
 
+For compiling everything into one file
+```
+INLINE_RUNTIME_CHUNK=false
+GENERATE_SOURCEMAP=false
+SKIP_PREFLIGHT_CHECK=true
+```
+
 Add the following to the `package.json` file, to make the build webpage also work in a subdirectory:
 
 ```json

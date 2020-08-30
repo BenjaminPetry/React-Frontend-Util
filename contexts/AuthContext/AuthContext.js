@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Login, { LOGIN_ACTIONS, RESPONSE_TYPE } from "./Login";
-import { AjaxInstance } from "../Ajax";
+import { AjaxInstance } from "../../Ajax";
 import AccessTokenService from "./AccessTokenService";
-import useQueue from "../hooks/useQueue";
+import useQueue from "../../hooks/useQueue";
 
 export const AuthContext = React.createContext();
 
@@ -42,11 +42,11 @@ export default function AuthProvider({ children }) {
     isLoading: current_action !== null,
     user: user,
     scope: scope,
-    login: (callback, email = "") => {
+    login: (callback = (success) => {}, email = "") => {
       console.log("AuthContext: Login initiated");
       add(createAction(LOGIN_ACTIONS.LOGIN_NORMAL, callback, { email: email }));
     },
-    logout: (callback) => {
+    logout: (callback = (success) => {}) => {
       console.log("AuthContext: Logout initiated");
       add(createAction(LOGIN_ACTIONS.LOGOUT, callback));
     },
