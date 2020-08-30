@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../../util/contexts/AuthContext/AuthContext";
-import Spinner from "../../util/base/Spinner";
-import Tile from "../../util/display/Tile";
+import { AuthContext } from "../../../contexts/AuthContext/AuthContext";
+import Spinner from "../../state/Spinner/Spinner";
+import Tile from "../../../containers/Tile/Tile";
 
 export const userDetailsRoute = {
   path: "/account",
@@ -19,13 +19,13 @@ function UserDetails() {
   const rights = authContext.scope;
 
   const spinner = isLoading ? <Spinner></Spinner> : null;
-  const details = isLoading ? null : isUser ? (
+  const details = isUser ? (
     <div>
       <p>Name: {user.username}</p>
       <p>E-Mail: {user.email}</p>
       <p>Rights: {rights !== null ? rights.join(", ") : "-"}</p>
       <button className="primary" onClick={() => authContext.logout()}>
-        Logout.
+        Logout
       </button>
     </div>
   ) : (

@@ -4,7 +4,7 @@
  * without warranties or conditions of any kind, either express or implied.
  */
 
-.BasicApp {
+.BaseApp {
   text-align: center;
   width: 100vw;
   min-height: 100%;
@@ -22,7 +22,7 @@
 
 /* TABLET */
 @media (min-width: 37.5em) {
-  .BasicApp {
+  .BaseApp {
     grid-template-columns: min-content 1fr;
     grid-template-rows: min-content min-content 1fr;
     grid-template-areas:
@@ -32,7 +32,7 @@
   }
 }
 
-.BasicApp .breadcrumb {
+.BaseApp .breadcrumb {
   grid-area: breadcrumbs;
   align-self: center;
   justify-self: center;
@@ -71,7 +71,6 @@ main > * {
   margin-left: 0px;
   margin-right: 0px;
   height: auto;
-  box-sizing: content-box;
   padding-bottom: 40px;
 }
 

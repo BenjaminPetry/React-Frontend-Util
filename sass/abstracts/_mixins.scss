@@ -5,3 +5,80 @@
     }
   }
 }
+
+@mixin normalizeButton() {
+  display: block;
+  border-style: none;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
+}
+
+@mixin closeButton {
+  @include normalizeButton();
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--primary-medium);
+    transform: translateY(-0.1rem);
+    text-shadow: var(--shadow-down-light);
+  }
+
+  &:active {
+    color: var(--primary-dark);
+    transform: translateY(-0.05rem);
+    text-shadow: var(--shadow-down-medium);
+  }
+}
+
+@mixin icon() {
+  display: inline-block;
+  font-family: "font_awesome_solid", "font_awesome_brands";
+  margin-right: 1rem;
+  width: 2rem;
+  overflow: visible;
+  text-align: center;
+}
+
+@mixin center() {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+$bp-phone: 37.5em; // = 600px;
+$bp-tablet-portrait: 56.25em; // = 900px;
+$bp-tablet-landscape: 75em; // = 1200px;
+$bp-desktop: 112.5em; // = 1800px;
+
+@mixin respond($bp) {
+  @if ($bp == phone) {
+    @media (max-width: $bp-phone) {
+      @content;
+    }
+  }
+  @if ($bp == tab-port) {
+    @media (max-width: $bp-tablet-portrait) {
+      @content;
+    }
+  }
+  @if ($bp == tab-land) {
+    @media (max-width: $bp-tablet-landscape) {
+      @content;
+    }
+  }
+  @if ($bp == big-desktop) {
+    @media (max-width: $bp-desktop-big) {
+      @content;
+    }
+  }
+}

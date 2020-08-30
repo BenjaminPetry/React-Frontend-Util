@@ -5,11 +5,11 @@
  */
 import React, { useState, useEffect } from "react";
 
-import Tile from "../display/Tile";
 import ActionBar from "../navigation/ActionBar";
 import ErrorBar from "../display/ErrorBar";
 
 import "./FormTile.css";
+import Tile from "../Tile/Tile";
 
 export default function FormTile({
   title = "",

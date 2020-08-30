@@ -6,7 +6,7 @@
 import React from "react";
 
 import "./Tile.css";
-import ActionBar from "../navigation/ActionBar";
+import ActionBar from "../../components/navigation/ActionBar/ActionBar";
 // GRIP-icon for movable: \uf58e
 
 export default function Tile({

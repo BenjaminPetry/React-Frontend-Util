@@ -6,7 +6,7 @@
 import React, { useEffect, useState } from "react";
 
 import "./Login.scss";
-import Spinner from "../../base/Spinner";
+import Spinner from "../../components/state/Spinner/Spinner";
 
 export const LOGIN_ACTIONS = {
   LOGIN_SILENT: "LOGIN_SILENT",

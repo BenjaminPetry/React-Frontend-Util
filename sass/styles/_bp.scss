@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Open+Sans:wght@400;700&display=swap");
+
+:root {
+  /* ###########################################################
+   ########################## COLORS #########################
+   ########################################################### */
+
+  /* Primary */
+  --primary: #006c5d; /* Main Color */
+  --primary-dark: #004037;
+  --primary-medium: #00bfa5;
+  --primary-light: #00ffdc;
+
+  /* Secondary */
+  --secondary: #6b2000;
+  --secondary-dark: #401300;
+  --secondary-medium: #bf3900;
+  --secondary-light: #ff4c00;
+
+  /* Greys */
+  --white: #ffffff;
+  --grey-95: #f3f4f5;
+  --grey-90: #e6e7e8;
+  --grey-80: #ccced0;
+  --grey-60: #999c9f;
+  --grey-50: #808386;
+  --grey-40: #66696c;
+  --grey-30: #4d5053;
+  --grey-20: #333539;
+  --black: #000000;
+
+  /* Status */
+  --status-caution: #e63a2e;
+  --status-warning: #f2cc30;
+  --status-ok: #21a637;
+  --status-neutral: #a8aaad;
+
+  /* Signal */
+  --signal-danger: #cc0e00;
+  --signal-warning: #e6b900;
+  --signal-information: #0061bf;
+  --signal-confirmation: #008c17;
+
+  /* Shadows */
+  --shadow-light: 0px 0px 3px rgba(0, 0, 0, 0.15);
+  --shadow-medium: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  --shadow-dark: 0px 0px 2rem rgba(0, 0, 0, 0.25);
+
+  --shadow-down-light: 0px -1px 3px rgba(0, 0, 0, 0.15);
+  --shadow-down-medium: 0px -3px 6px rgba(0, 0, 0, 0.2);
+  --shadow-down-dark: 0px -6px 2rem rgba(0, 0, 0, 0.25);
+
+  /* ###########################################################
+   ##################### SPACING & SIZES #####################
+   ########################################################### */
+
+  --spacing-xxl: 4rem;
+  --spacing-xl: 3.2rem;
+  --spacing-lg: 2.4rem;
+  --spacing-md: 1.6rem;
+  --spacing-smd: 1.2rem;
+  --spacing-sm: 0.8rem;
+  --spacing-xs: 0.4rem;
+  --spacing-xxs: 0.2rem;
+
+  --icon-xxl: 4rem;
+  --icon-xl: 3.2rem;
+  --icon-lg: 2.4rem;
+  --icon-md: 1.6rem;
+  --icon-sm: 0.8rem;
+
+  --font-xxl: 4rem;
+  --font-xl: 3.2rem;
+  --font-lg: 2.4rem;
+  --font-md: 1.6rem;
+  --font-sm: 1.2rem;
+  --font-xs: 0.8rem;
+
+  --font-text: "Lato", sans-serif;
+  --font-headings: "Open Sans", sans-serif;
+
+  --font-bold: 700;
+  --font-normal: 300;
+  --font-light: 300;
+
+  --break-phone: 37.5em; /* 600px */
+  --break-tablet: 64em; /* 1024px */
+
+  --content-max-width: 960px;
+  /*--lg: */
+}

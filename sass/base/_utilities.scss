@@ -4,11 +4,7 @@
 
 .center-box,
 .center-box-100 {
-  position: absolute;
-  display: block;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  @include center();
   text-align: center;
 }
 

@@ -1,6 +1,10 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
 @import "base/animations";
 @import "base/base";
+@import "base/typography";
 @import "base/styles";
 @import "base/utilities";
 
-@import "abstracts/mixins";
+@import "styles/bp";

@@ -18,8 +18,20 @@ export default function AuthProvider({ children }) {
     }),
   ]);
 
-  const [user, setUser] = useState(null);
-  const [scope, setScope] = useState(null);
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("auth-context--user") || "null")
+  );
+  const [scope, setScope] = useState(
+    JSON.parse(localStorage.getItem("auth-context--scope") || "null")
+  );
+
+  const setAuthSettings = (user, scope) => {
+    localStorage.setItem("auth-context--user", JSON.stringify(user));
+    localStorage.setItem("auth-context--scope", JSON.stringify(scope));
+
+    setUser(user);
+    setScope(scope);
+  };
 
   useEffect(() => {
     AjaxInstance.setAuthorizationErrorHandler(() => {
@@ -79,8 +91,7 @@ export default function AuthProvider({ children }) {
             .then((user_info) => {
               console.log("AuthContext: New Access Token");
               AjaxInstance.setToken(user_info.token);
-              setUser(user_info.user);
-              setScope(user_info.scope);
+              setAuthSettings(user_info.user, user_info.scope);
 
               current_action.cb(true);
               next();
@@ -93,8 +104,7 @@ export default function AuthProvider({ children }) {
         case RESPONSE_TYPE.LOGOUT_SUCCESSFUL:
           console.log("AuthContext: Logout successful");
           AjaxInstance.setToken(null);
-          setUser(null);
-          setScope(null);
+          setAuthSettings(null, null);
           current_action.cb(true);
           next();
           break;

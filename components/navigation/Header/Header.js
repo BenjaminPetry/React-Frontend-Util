@@ -3,20 +3,14 @@
  * This software is provided on an "AS IS" BASIS,
  * without warranties or conditions of any kind, either express or implied.
  */
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import { Switch, Route } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthContext/AuthContext";
 
-import { useHistory } from "react-router-dom";
-export const LoginRoute = {
-  path: "/login",
-  icon: "\uf2f6",
-  title: "Login",
-  menuItem: "false",
-};
+export default function Header({ views, children }) {
+  const authContext = useContext(AuthContext);
 
-export default function Header({ views, children, appContext }) {
-  let history = useHistory();
   return (
     <header>
       <div className="appicon headerappicon" />
@@ -34,11 +28,11 @@ export default function Header({ views, children, appContext }) {
         })}
       </Switch>
       {children}
-      {appContext.user ? (
+      {authContext.user ? (
         <div
           className="user icon"
           onClick={() => {
-            history.push(LoginRoute.path);
+            authContext.login();
           }}
         >
           {"\uf007"}
