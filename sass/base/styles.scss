@@ -53,135 +53,135 @@ caption,
    ######################## TEXT SIZES #######################
    ########################################################### */
 
-body,
-caption,
-th,
-td,
-input,
-textarea,
-select,
-option,
-legend,
-fieldset,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size-adjust: 0.5;
-}
+// body,
+// caption,
+// th,
+// td,
+// input,
+// textarea,
+// select,
+// option,
+// legend,
+// fieldset,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   font-size-adjust: 0.5;
+// }
 
-label,
-.label {
-  font-weight: var(--font-bold);
-}
+// label,
+// .label {
+//   font-weight: var(--font-bold);
+// }
 
-.title {
-  font-weight: var(--font-bold);
-  text-align: center;
-}
+// .title {
+//   font-weight: var(--font-bold);
+//   text-align: center;
+// }
 
-.invalid caption,
-caption.invalid {
-  font-weight: var(--font-bold);
-}
+// .invalid caption,
+// caption.invalid {
+//   font-weight: var(--font-bold);
+// }
 
-.title-light {
-  text-align: center;
-}
+// .title-light {
+//   text-align: center;
+// }
 
-/* MOBILE PHONE */
+// /* MOBILE PHONE */
 
-h1 {
-  font-size: 3.2rem;
-  line-height: 1.25rem;
-}
+// h1 {
+//   font-size: 3.2rem;
+//   line-height: 1.25rem;
+// }
 
-h2 {
-  font-size: 1.625rem;
-  line-height: 1.15384615rem;
-}
+// h2 {
+//   font-size: 1.625rem;
+//   line-height: 1.15384615rem;
+// }
 
-h3 {
-  font-size: 1.375rem;
-  line-height: 1.13636364rem;
-}
+// h3 {
+//   font-size: 1.375rem;
+//   line-height: 1.13636364rem;
+// }
 
-h4 {
-  font-weight: var(--font-bold);
-  font-size: 1.125rem;
-  line-height: 1.22222rem;
-}
+// h4 {
+//   font-weight: var(--font-bold);
+//   font-size: 1.125rem;
+//   line-height: 1.22222rem;
+// }
 
-h5 {
-  font-size: 1.125rem;
-  line-height: 1.22222rem;
-}
+// h5 {
+//   font-size: 1.125rem;
+//   line-height: 1.22222rem;
+// }
 
-p {
-  max-width: 17rem; /* approx 35 - 40 characters */
-}
+// p {
+//   max-width: 17rem; /* approx 35 - 40 characters */
+// }
 
-caption,
-.caption {
-  font-size: 0.8rem;
-  line-height: 1.618rem;
-}
+// caption,
+// .caption {
+//   font-size: 0.8rem;
+//   line-height: 1.618rem;
+// }
 
-/* TABLET */
-@media (min-width: 37.5em) {
-  * {
-    font-size: 1rem;
-    line-height: 1.375rem;
-  }
+// /* TABLET */
+// @media (min-width: 37.5em) {
+//   * {
+//     font-size: 1rem;
+//     line-height: 1.375rem;
+//   }
 
-  h1 {
-    font-size: 2.5rem;
-    line-height: 1.125rem;
-  }
+//   h1 {
+//     font-size: 2.5rem;
+//     line-height: 1.125rem;
+//   }
 
-  h2 {
-    font-size: 2rem;
-    line-height: 1.25rem;
-  }
+//   h2 {
+//     font-size: 2rem;
+//     line-height: 1.25rem;
+//   }
 
-  h3 {
-    font-size: 1.5rem;
-    line-height: 1.25rem;
-  }
+//   h3 {
+//     font-size: 1.5rem;
+//     line-height: 1.25rem;
+//   }
 
-  p {
-    max-width: 28rem; /* approx 60-75 characters */
-  }
-}
+//   p {
+//     max-width: 28rem; /* approx 60-75 characters */
+//   }
+// }
 
-/* DESKTOP */
-@media (min-width: 60em) {
-  * {
-    font-size: 1rem;
-    line-height: 1.375rem;
-  }
+// /* DESKTOP */
+// @media (min-width: 60em) {
+//   * {
+//     font-size: 1rem;
+//     line-height: 1.375rem;
+//   }
 
-  h1 {
-    font-size: 3rem;
-    line-height: 1.05rem;
-  }
+//   h1 {
+//     font-size: 3rem;
+//     line-height: 1.05rem;
+//   }
 
-  h2 {
-    font-size: 2.25rem;
-    line-height: 1.25rem;
-  }
+//   h2 {
+//     font-size: 2.25rem;
+//     line-height: 1.25rem;
+//   }
 
-  h3 {
-    font-size: 1.75rem;
-    line-height: 1.25rem;
-  }
+//   h3 {
+//     font-size: 1.75rem;
+//     line-height: 1.25rem;
+//   }
 
-  p {
-    max-width: 28rem; /* approx 60-75 characters */
-  }
-}
+//   p {
+//     max-width: 28rem; /* approx 60-75 characters */
+//   }
+// }
 
 /* ###########################################################
    ##################### ELEMENT SPACINGS ####################

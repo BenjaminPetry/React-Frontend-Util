@@ -1,0 +1,29 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
+@import "../../../sass/abstracts/mixins";
+
+.menu-item {
+  padding: var(--spacing-sm) var(--spacing-md);
+  list-style: none;
+  display: flex;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &__icon {
+    @include icon();
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--secondary-light);
+    color: var(--white);
+  }
+
+  &:active {
+    background-color: var(--secondary-medium);
+  }
+}

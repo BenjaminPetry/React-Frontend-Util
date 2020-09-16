@@ -4,26 +4,37 @@
  * without warranties or conditions of any kind, either express or implied.
  */
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { AuthContext } from "../../../../../contexts/AuthContext/AuthContext";
 import Login from "../../../../../contexts/AuthContext/Login";
 import "./UserControl.scss";
+import Menu from "../../../../../containers/Menu/Menu";
+import MenuItem from "../../../../../containers/Menu/MenuItem/MenuItem";
+import useMenuController from "../../../../../containers/Menu/useMenuController/useMenuController";
 
 function UserControl() {
   const authContext = useContext(AuthContext);
-  const [showMenu, setShowMenu] = useState(false);
   const isUser = authContext.user !== null;
+  const [showMenu, setShowMenu] = useState(false);
+  const [menuPosition, setMenuPosition] = useState([0, 0]);
+
+  const clickHandler = (event) => {
+    setMenuPosition([event.clientX, event.clientY]);
+    setShowMenu((prevState) => {
+      return !prevState;
+    });
+  };
+
+  const itemClickWrapper = (fun) => {
+    return (event) => {
+      fun(event);
+      setShowMenu(false);
+    };
+  };
 
   const userIcon = (
-    <div
-      className="UserControl__icon"
-      onClick={() => {
-        setShowMenu((prevState) => {
-          return !prevState;
-        });
-      }}
-    >
-      {isUser ? "\uf007" : "\uf2bd"}
+    <div className="UserControl__icon" onClick={clickHandler}>
+      {"\uf007"}
     </div>
   );
 
@@ -33,22 +44,36 @@ function UserControl() {
         className={"UserControl " + (isUser ? "UserControl--logged-in" : "")}
       >
         <div className="UserControl__icon-wrapper">{userIcon}</div>
-        <nav
-          className={
-            "UserControl__menu UserControl__menu--" +
-            (showMenu ? "visible" : "hidden")
-          }
+        <Menu
+          show={showMenu}
+          onClose={() => setShowMenu(false)}
+          position={menuPosition}
         >
-          <ul>
-            {!isUser ? (
-              <li onClick={() => authContext.login()}>Login</li>
-            ) : null}
-            {isUser ? <li onClick={() => alert("todo")}>Account</li> : null}
-            {isUser ? (
-              <li onClick={() => authContext.logout()}>Logout</li>
-            ) : null}
-          </ul>
-        </nav>
+          {!isUser ? (
+            <MenuItem
+              icon={"\uf2f6"}
+              onClick={itemClickWrapper(() => authContext.login())}
+            >
+              Login
+            </MenuItem>
+          ) : null}
+          {isUser ? (
+            <MenuItem
+              icon={"\uf4fe"}
+              onClick={itemClickWrapper(() => alert("todo"))}
+            >
+              Account
+            </MenuItem>
+          ) : null}
+          {isUser ? (
+            <MenuItem
+              icon={"\uf2f5"}
+              onClick={itemClickWrapper(() => authContext.logout())}
+            >
+              Logout
+            </MenuItem>
+          ) : null}
+        </Menu>
       </div>
     </React.Fragment>
   );

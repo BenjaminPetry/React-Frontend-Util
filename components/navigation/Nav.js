@@ -14,7 +14,7 @@ export default function Nav({ onViewSelection = (view) => {}, views = [] }) {
 
   return (
     <nav
-      className={navOpen ? "expanded" : ""}
+      className={"nav " + (navOpen ? "expanded" : "")}
       onClick={() => setNavOpen(!navOpen)}
     >
       <div className="menu">
