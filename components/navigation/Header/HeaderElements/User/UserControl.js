@@ -4,13 +4,11 @@
  * without warranties or conditions of any kind, either express or implied.
  */
 
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../../../contexts/AuthContext/AuthContext";
-import Login from "../../../../../contexts/AuthContext/Login";
 import "./UserControl.scss";
 import Menu from "../../../../../containers/Menu/Menu";
 import MenuItem from "../../../../../containers/Menu/MenuItem/MenuItem";
-import useMenuController from "../../../../../containers/Menu/useMenuController/useMenuController";
 
 function UserControl() {
   const authContext = useContext(AuthContext);
