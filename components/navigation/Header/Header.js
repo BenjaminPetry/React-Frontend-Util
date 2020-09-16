@@ -28,18 +28,6 @@ export default function Header({ views, children }) {
         })}
       </Switch>
       {children}
-      {authContext.user ? (
-        <div
-          className="user icon"
-          onClick={() => {
-            authContext.login();
-          }}
-        >
-          {"\uf007"}
-        </div>
-      ) : (
-        <div />
-      )}
     </header>
   );
 }

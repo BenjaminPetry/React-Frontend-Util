@@ -30,11 +30,41 @@ function UserControl() {
     };
   };
 
+  // UI ELEMENTS
   const userIcon = (
     <div className="UserControl__icon" onClick={clickHandler}>
       {"\uf007"}
     </div>
   );
+
+  let loginElement = null;
+  let logoutElement = null;
+  let accountElement = null;
+
+  if (isUser) {
+    accountElement = (
+      <MenuItem icon={"\uf4fe"} onClick={itemClickWrapper(() => alert("todo"))}>
+        Account
+      </MenuItem>
+    );
+    logoutElement = (
+      <MenuItem
+        icon={"\uf2f5"}
+        onClick={itemClickWrapper(() => authContext.logout())}
+      >
+        Logout
+      </MenuItem>
+    );
+  } else {
+    loginElement = (
+      <MenuItem
+        icon={"\uf2f6"}
+        onClick={itemClickWrapper(() => authContext.login())}
+      >
+        Login
+      </MenuItem>
+    );
+  }
 
   return (
     <React.Fragment>
@@ -42,37 +72,16 @@ function UserControl() {
         className={"UserControl " + (isUser ? "UserControl--logged-in" : "")}
       >
         <div className="UserControl__icon-wrapper">{userIcon}</div>
-        <Menu
-          show={showMenu}
-          onClose={() => setShowMenu(false)}
-          position={menuPosition}
-        >
-          {!isUser ? (
-            <MenuItem
-              icon={"\uf2f6"}
-              onClick={itemClickWrapper(() => authContext.login())}
-            >
-              Login
-            </MenuItem>
-          ) : null}
-          {isUser ? (
-            <MenuItem
-              icon={"\uf4fe"}
-              onClick={itemClickWrapper(() => alert("todo"))}
-            >
-              Account
-            </MenuItem>
-          ) : null}
-          {isUser ? (
-            <MenuItem
-              icon={"\uf2f5"}
-              onClick={itemClickWrapper(() => authContext.logout())}
-            >
-              Logout
-            </MenuItem>
-          ) : null}
-        </Menu>
       </div>
+      <Menu
+        show={showMenu}
+        onClose={() => setShowMenu(false)}
+        position={menuPosition}
+      >
+        {loginElement}
+        {accountElement}
+        {logoutElement}
+      </Menu>
     </React.Fragment>
   );
 }
