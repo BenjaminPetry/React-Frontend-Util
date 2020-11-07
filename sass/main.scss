@@ -1,10 +1,15 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
 @import "abstracts/variables";
 @import "abstracts/mixins";
+
+@import "styles/bp2.0";
 
 @import "base/animations";
 @import "base/base";
 @import "base/typography";
-@import "base/styles";
 @import "base/utilities";
-
-@import "styles/bp";

@@ -4,6 +4,17 @@
  * without warranties or conditions of any kind, either express or implied.
  */
 
+@mixin hide() {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s;
+}
+@mixin show() {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.2s, opacity 0.2s;
+}
+
 @keyframes dissolve {
   0% {
     opacity: 0;

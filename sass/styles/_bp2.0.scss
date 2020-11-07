@@ -1,0 +1,173 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+:root {
+  /* 
+   ###########################################################
+   ########################## COLORS #########################
+   ########################################################### */
+
+  /* Primary */
+  --primary-dark: #{$primary-dark};
+  --primary-med: #{$primary-med};
+  --primary-light: #{$primary-light};
+
+  /* Secondary */
+  --secondary-dark: #{$secondary-dark};
+  --secondary-med: #{$secondary-med};
+  --secondary-light: #{$secondary-light};
+
+  /* Greys */
+  --white: #{$white};
+  --grey-95: #{$grey-95};
+  --grey-90: #{$grey-90};
+  --grey-80: #{$grey-80};
+  --grey-60: #{$grey-60};
+  --grey-50: #{$grey-50};
+  --black-150: #{$black-150};
+  --black-100: #{$black-100};
+
+  /* Signal */
+  --signal-danger: #{$signal-danger};
+  --signal-warning: #{$signal-warning};
+  --signal-confirm: #{$signal-confirm};
+  --signal-info: #{$signal-info};
+
+  /* Status */
+  --status-caution: #{$status-caution};
+  --status-warning: #{$status-warning};
+  --status-ok: #{$status-ok};
+  --status-info: #{$status-info};
+  --status-neutral: #{$status-neutral};
+
+  /* Shadows */
+  --shadow-light: #{$shadow-light};
+  --shadow-med: #{$shadow-med};
+  --shadow-dark: #{$shadow-dark};
+
+  /* 
+   ###########################################################
+   ######################## TYPOGRAPHY #######################
+   ########################################################### */
+
+  --font-text: #{$text-font-family};
+  --font-heading: #{$heading-font-family};
+
+  --font-bold: #{$bold-font-weight};
+  --font-normal: #{$normal-font-weight};
+  --font-light: #{$normal-font-weight};
+
+  /* 
+   ###########################################################
+   ######################### SPACINGS ########################
+   ########################################################### */
+
+  // this is used for paddings between containers
+  --container-margin-h: #{$container-margin-h};
+  --container-margin-v: #{$container-margin-v};
+
+  // this is the padding inside of a container
+  --container-padding-h: #{$container-padding-h};
+  --container-padding-v: #{$container-padding-v};
+
+  // this is the padding for e.g. action bars
+  --bar-padding-h: #{$bar-padding-h};
+  --bar-padding-v: #{$bar-padding-v};
+
+  // this is the padding between elements inside containers
+  --margin-sm-h: #{$margin-sm-h};
+  --margin-sm-v: #{$margin-sm-v};
+  --margin-md-h: #{$margin-md-h};
+  --margin-md-v: #{$margin-md-v};
+  --margin-lg-h: #{$margin-lg-h};
+  --margin-lg-v: #{$margin-lg-v};
+
+  --content-max-width: 960px;
+}
+
+.heading150,
+h1 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-light);
+  font-size: $heading-150-size;
+  line-height: $heading-150-line-height;
+}
+
+.heading100,
+h2 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-light);
+  font-size: $heading-100-size;
+  line-height: $heading-100-line-height;
+}
+
+.heading75,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-normal);
+  font-size: $heading-75-size;
+  line-height: $heading-75-line-height;
+}
+
+.heading50,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-normal);
+  font-size: $heading-50-size;
+  line-height: $heading-50-line-height;
+}
+
+.heading25,
+h5 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: $heading-25-size;
+  line-height: $heading-25-line-height;
+}
+
+.textNormal-100,
+.textBold-100,
+.textLight-100 {
+  font-family: var(--font-text);
+  font-size: $text-100-size;
+  line-height: $text-100-line-height;
+}
+
+.textNormal-75,
+.textBold-75,
+.textLight-75 {
+  font-family: var(--font-text);
+  font-size: $text-75-size;
+  line-height: $text-75-line-height;
+}
+
+.textNormal-50,
+.textBold-50,
+.textLight-50 {
+  font-family: var(--font-text);
+  font-size: $text-50-size;
+  line-height: $text-50-line-height;
+}
+
+.textNormal-100,
+.textNormal-75,
+.textNormal-50 {
+  font-weight: var(--font-normal);
+}
+
+.textBold-100,
+.textBold-75,
+.textBold-50 {
+  font-weight: var(--font-bold);
+}
+
+.textLight-100,
+.textLight-75,
+.textLight-50 {
+  font-weight: var(--font-light);
+}

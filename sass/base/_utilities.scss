@@ -1,3 +1,9 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
 .center-box-100 {
   width: 100%;
 }
@@ -10,4 +16,29 @@
 
 .hidden {
   display: none !important;
+}
+
+.status--error {
+  color: var(--white);
+  background: var(--status-caution);
+}
+
+.status--warning {
+  color: var(--black-100);
+  background: var(--status-warning);
+}
+
+.status--hint {
+  color: var(--white);
+  background: var(--status-info);
+}
+
+.status--success {
+  color: var(--white);
+  background: var(--status-ok);
+}
+
+.status--neutral {
+  color: var(--white);
+  background: var(--status-neutral);
 }

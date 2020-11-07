@@ -1,18 +1,15 @@
+/**
+ * Copyright 2020 by Benjamin Petry (www.bpetry.de).
+ * This software is provided on an "AS IS" BASIS,
+ * without warranties or conditions of any kind, either express or implied.
+ */
+
 body {
   font-family: var(--font-text);
   font-weight: var(--font-normal);
   font-size: var(--font-md);
   line-height: 1.7;
   color: var(--grey-20);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-headings);
 }
 
 @font-face {
@@ -49,4 +46,16 @@ h6 {
       format("truetype"),
     url(https://use.fontawesome.com/releases/v5.13.0/webfonts/ffa-brands-400.svg#fontawesome)
       format("svg");
+}
+
+.vgap-sm {
+  margin-bottom: $margin-sm-v;
+}
+
+.vgap-md {
+  margin-bottom: $margin-md-v;
+}
+
+.vgap-lg {
+  margin-bottom: $margin-lg-v;
 }

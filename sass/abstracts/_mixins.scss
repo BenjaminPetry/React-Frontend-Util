@@ -6,6 +6,30 @@
   }
 }
 
+@mixin icon() {
+  display: inline-block;
+  font-family: "font_awesome_solid", "font_awesome_brands";
+  margin-right: 1rem;
+  width: 2rem;
+  overflow: visible;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+@mixin center() {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin centerContent() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin normalizeButton() {
   display: block;
   border-style: none;
@@ -36,23 +60,6 @@
     transform: translateY(-0.05rem);
     text-shadow: var(--shadow-down-medium);
   }
-}
-
-@mixin icon() {
-  display: inline-block;
-  font-family: "font_awesome_solid", "font_awesome_brands";
-  margin-right: 1rem;
-  width: 2rem;
-  overflow: visible;
-  text-align: center;
-}
-
-@mixin center() {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 $bp-phone: 37.5em; // = 600px;

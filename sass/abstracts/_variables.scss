@@ -1,0 +1,86 @@
+// BP Design System 2.0 - Colors
+$white: #ffffff;
+$grey-95: #f3f4f5;
+$grey-90: #e6e7e8;
+$grey-80: #ccced0;
+$grey-60: #999c9f;
+$grey-50: #808386;
+$black-150: #4d5053;
+$black-100: #333539;
+
+$primary-light: #99fffc;
+$primary-med: #60bfbc;
+$primary-dark: #2e7370;
+
+$secondary-light: #ffbd99;
+$secondary-med: #bf8160;
+$secondary-dark: #73462e;
+
+$signal-danger: #cc0e00;
+$signal-warning: #f2cc30;
+$signal-confirm: #21a637;
+$signal-info: #0061bf;
+
+$status-caution: #cc473d;
+$status-warning: #f2d661;
+$status-ok: #42a653;
+$status-info: #397dbf;
+$status-neutral: #babcbf;
+
+$shadow-light: 0px 2px 5px rgba(0, 0, 0, 0.1);
+$shadow-med: 0px 2px 4px rgba(0, 0, 0, 0.2);
+$shadow-dark: 0px 1px 3px rgba(0, 0, 0, 0.4);
+
+// BP Design System 2.0 - Typographic Settings
+
+$heading-font-family: "Lato", sans-serif;
+$text-font-family: "Lato", sans-serif;
+
+$bold-font-weight: 700;
+$normal-font-weight: 400;
+$thin-font-weight: 300;
+
+$heading-150-size: 3.6rem;
+$heading-150-line-height: 4.2rem;
+
+$heading-100-size: 2.8rem;
+$heading-100-line-height: 3.4rem;
+
+$heading-75-size: 2.4rem;
+$heading-75-line-height: 3rem;
+
+$heading-50-size: 2rem;
+$heading-50-line-height: 2.6rem;
+
+$heading-25-size: 1.6rem;
+$heading-25-line-height: 2.2rem;
+
+$text-100-size: 1.6rem;
+$text-100-line-height: 2.4rem;
+
+$text-75-size: 1.2rem;
+$text-75-line-height: 1.8rem;
+
+$text-50-size: 0.8rem;
+$text-50-line-height: 1.2rem;
+
+// BP Design System 2.0 - Spacings
+// this is used for paddings between containers
+$container-margin-h: 2.4rem; //1.2rem;
+$container-margin-v: 2.4rem; //1.2rem;
+
+// this is the padding inside of a container
+$container-padding-h: 1.6rem; //1.2rem;
+$container-padding-v: 1.6rem; //1.2rem;
+
+// this is the padding for e.g. action bars
+$bar-padding-h: 1.6rem; //1.2rem;
+$bar-padding-v: 0.8rem; //1.2rem;
+
+// this is the padding between elements inside containers
+$margin-sm-h: 0.8rem;
+$margin-sm-v: 0.8rem;
+$margin-md-h: 1.6rem;
+$margin-md-v: 1.6rem;
+$margin-lg-h: 2.4rem;
+$margin-lg-v: 2.4rem;
