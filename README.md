@@ -42,11 +42,11 @@ Add the following to App.js:
 ```bash
 yarn add axios
 yarn add video-react
-yarn add @fortawesome/fontawesome-free
+<!-- yarn add @fortawesome/fontawesome-free -->
 yarn add --dev node-sass
 ```
 
-Add `<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/all.css" />` to `index.html` in `public`.
+<!-- Add `<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/all.css" />` to `index.html` in `public`. -->
 
 ## Start
 
