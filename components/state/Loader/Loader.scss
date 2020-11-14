@@ -1,0 +1,62 @@
+@import "../../../sass/abstracts/mixins";
+
+.loader--visible {
+  @include show();
+}
+
+.loader--hidden {
+  @include hide();
+}
+
+.loader {
+  display: inline-block;
+  animation: loader-rotate 0.8s infinite linear;
+  font-size: 1rem;
+  overflow: hidden;
+  position: relative;
+  text-indent: -9999em;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgba($grey-90, 0.5) rgba($grey-90, 0.5) rgba($grey-90, 0.5)
+    $grey-90;
+  vertical-align: bottom;
+}
+
+.loader.loader--dark {
+  border-color: rgba($grey-50, 0.5) rgba($grey-50, 0.5) rgba($grey-50, 0.5)
+    $grey-50;
+}
+
+.loader--75 {
+  border-width: 0.2rem;
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+.loader--100 {
+  border-width: 0.3rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+.loader--200 {
+  border-width: 0.5rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+.loader--250 {
+  border-width: 0.7rem;
+  height: 6rem;
+  width: 6rem;
+}
+
+@keyframes loader-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
