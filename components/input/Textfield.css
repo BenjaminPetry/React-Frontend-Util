@@ -4,7 +4,8 @@
  * without warranties or conditions of any kind, either express or implied.
  */
 
-input {
+input,
+textarea {
   margin: var(--spacing-sm);
   height: calc(var(--spacing-xxl) - var(--spacing-sm) * 2 - 2px);
   padding: var(--spacing-sm);
@@ -29,21 +30,25 @@ input {
 }
 
 input.invalid,
-.invalid input {
+.invalid input,
+.invalid textarea {
   height: calc(var(--spacing-xxl) - var(--spacing-sm) * 2 - 2px);
   border: 1px solid var(--signal-danger);
   color: var(--signal-danger);
 }
 
 input.warning,
-.warning input {
+.warning input,
+.warning textarea {
   height: calc(var(--spacing-xxl) - var(--spacing-sm) * 2 - 2px);
   border: 1px solid var(--signal-warning);
 }
 
 input.invalid:focus,
 .invalid input:focus,
-input:focus {
+.invalid textarea:focus,
+input:focus,
+textarea:focus {
   height: calc(var(--spacing-xxl) - var(--spacing-sm) * 2 - 2px);
   border: 1px solid var(--grey-80);
   border-bottom: 2px solid var(--black);
@@ -51,7 +56,8 @@ input:focus {
   color: var(--black);
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: var(--grey-60);
 }
 
@@ -59,7 +65,8 @@ input::placeholder {
   height: calc(var(--spacing-xxl));
 }
 
-.inputContainer input {
+.inputContainer input,
+.inputContainer textarea {
   margin: 0px;
   width: calc(100% - var(--spacing-sm) * 2 - 2px);
   float: left;

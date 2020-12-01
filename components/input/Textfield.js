@@ -62,6 +62,12 @@ export default function Textfield({
         </div>
       ) : null}
       <div className="inputContainer">
+      {type === "textarea" ? <textarea ref={inputRef}
+          name={name}
+          lang={"en-150"}
+          onChange={onChange}
+          placeholder={placeholder}
+          disabled={disabled} autoFocus={focus} {...rest} value={value}></textarea> :
         <input
           ref={inputRef}
           name={name}
@@ -69,15 +75,7 @@ export default function Textfield({
           type={realType}
           value={value}
           lang={"en-150"}
-          onChange={(event) => {
-            // if (type === "number") {
-            //   console.log(event.target.value);
-            //   const numericValue = event.target.value.replace(".", ",");
-            //   //.replace(NUMERIC_EXPRESSION, "");
-            //   event.target.value = numericValue + "";
-            // }
-            onChange(event);
-          }}
+          onChange={onChange}
           placeholder={placeholder}
           onFocus={(event) => {
             onFocusChange(true);
@@ -103,7 +101,7 @@ export default function Textfield({
             }
           }}
           {...rest}
-        />
+        />}
         {buttonicon ? (
           <button
             className="iconbutton"
