@@ -1,5 +1,3 @@
-@import "../../sass/abstracts/mixins";
-
 .modal {
   @include center();
   background-color: var(--white);

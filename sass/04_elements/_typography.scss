@@ -48,14 +48,84 @@ body {
       format("svg");
 }
 
-.vgap-sm {
-  margin-bottom: $margin-sm-v;
+.heading150,
+h1 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-light);
+  font-size: $heading-150-size;
+  line-height: $heading-150-line-height;
 }
 
-.vgap-md {
-  margin-bottom: $margin-md-v;
+.heading100,
+h2 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-light);
+  font-size: $heading-100-size;
+  line-height: $heading-100-line-height;
 }
 
-.vgap-lg {
-  margin-bottom: $margin-lg-v;
+.heading75,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-normal);
+  font-size: $heading-75-size;
+  line-height: $heading-75-line-height;
+}
+
+.heading50,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-normal);
+  font-size: $heading-50-size;
+  line-height: $heading-50-line-height;
+}
+
+.heading25,
+h5 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: $heading-25-size;
+  line-height: $heading-25-line-height;
+}
+
+.textNormal-100,
+.textBold-100,
+.textLight-100 {
+  font-family: var(--font-text);
+  font-size: $text-100-size;
+  line-height: $text-100-line-height;
+}
+
+.textNormal-75,
+.textBold-75,
+.textLight-75 {
+  font-family: var(--font-text);
+  font-size: $text-75-size;
+  line-height: $text-75-line-height;
+}
+
+.textNormal-50,
+.textBold-50,
+.textLight-50 {
+  font-family: var(--font-text);
+  font-size: $text-50-size;
+  line-height: $text-50-line-height;
+}
+
+.textNormal-100,
+.textNormal-75,
+.textNormal-50 {
+  font-weight: var(--font-normal);
+}
+
+.textBold-100,
+.textBold-75,
+.textBold-50 {
+  font-weight: var(--font-bold);
+}
+
+.textLight-100,
+.textLight-75,
+.textLight-50 {
+  font-weight: var(--font-light);
 }

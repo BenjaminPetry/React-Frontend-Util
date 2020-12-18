@@ -1,4 +1,4 @@
-@import "./variables";
+@import "../01_settings/variables";
 
 @mixin animationDelay($delayMin, $delaySteps, $maxChildren) {
   @for $i from 1 through $maxChildren {

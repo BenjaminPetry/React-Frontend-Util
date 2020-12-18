@@ -42,3 +42,15 @@
   color: var(--white);
   background: var(--status-neutral);
 }
+
+.vgap-sm {
+  margin-bottom: $margin-sm-v;
+}
+
+.vgap-md {
+  margin-bottom: $margin-md-v;
+}
+
+.vgap-lg {
+  margin-bottom: $margin-lg-v;
+}

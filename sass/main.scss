@@ -4,12 +4,12 @@
  * without warranties or conditions of any kind, either express or implied.
  */
 
-@import "abstracts/variables";
-@import "abstracts/mixins";
+@import "01_settings/variables";
+@import "02_tools/mixins";
+
+@import "03_generic/base";
+@import "04_elements/typography";
+@import "07_utilities/animations";
+@import "07_utilities/utilities";
 
 @import "styles/bp2.0";
-
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
